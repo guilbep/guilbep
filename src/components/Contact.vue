@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="contact">
     <form
       ref="contactForm"
       class="contact-form"
@@ -58,6 +58,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.contact {
+  background-size: cover;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.824),
+      rgba(128, 128, 128, 0.872)
+    ),
+    url('/assets/large.jpg');
+}
 .contact-form {
   // width should depend on max-width
   max-width: 400px;

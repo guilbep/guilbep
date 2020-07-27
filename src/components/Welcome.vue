@@ -1,6 +1,5 @@
 <template>
   <section class="welcome">
-    <p>Welcome, I am</p>
     <h1>Pierre Guilbert</h1>
     <p>Engineering web app</p>
     <hr />
@@ -25,5 +24,13 @@ export default {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0px 60px 0px 60px;
+
+  background-size: cover;
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.824),
+      rgba(128, 128, 128, 0.872)
+    ),
+    url('/assets/large.jpg');
 }
 </style>

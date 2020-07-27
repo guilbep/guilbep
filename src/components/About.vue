@@ -3,11 +3,21 @@
     <h1>About me</h1>
     <hr />
     <p>
-      I've been working full time in the web since 2013, first at numberly and
-      now at prevision.io
+      I've been working full time with the web platform since 2013
+    </p>
+    <p>
+      First at <a href="https://numberly.com/">numberly</a> shaping their RTB
+      products
+    </p>
+    <p>
+      and now at <a href="https://www.prevision.io/">prevision.io</a> helping to
+      scale their vision.
     </p>
     <p>I graduated from Epita in 2011 from the SCIA master</p>
-
+    <p>
+      I went on studying Biology and Modelisation at Paris VI between 2011 and
+      2013
+    </p>
     <hr />
     <nav>
       <a href="#contact">contact me here!</a>
