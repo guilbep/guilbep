@@ -1,30 +1,37 @@
 <template>
-  <div id="app">
-    <Welcome id="welcome" class="page-wrapper" />
-    <About id="about" class="page-wrapper" />
-    <Contact id="contact" class="page-wrapper" />
+  <div id="index">
+    <Nav id="nav" />
+    <Header id="ḧeader" />
+    <Main id="main" />
+    <Footer id="footer" />
   </div>
 </template>
 
 <script>
-import Welcome from './components/Welcome.vue';
-import About from './components/About.vue';
-import Contact from './components/Contact.vue';
+import Nav from '@/components/Nav.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Main from '@/components/Main.vue';
 
 export default {
-  name: 'App',
+  name: 'Index',
   components: {
-    Welcome,
-    About,
-    Contact
+    Nav,
+    Header,
+    Footer,
+    Main
   }
 };
 </script>
 
 <style lang="scss">
 :root {
-  --main-bg-color: #e3e3e3;
+  --main-bg-color: #fff;
   --main-text-color: #303030;
+  --secondary-text-color: #ccc;
+  --link-text-color: #02a3a3;
+  --link-text-important: var(--link-text-color);
+  --link-text-hover-color: #132b6e;
   --font-family-base: Helvetica, Arial, sans-serif;
   --font-size-base: 12px;
   --font-weight-base: 300;
@@ -47,26 +54,15 @@ body {
   background-color: var(--main-bg-color);
 }
 
-#app {
+#index {
   font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: var(--header-top-height);
-}
-
-.page-wrapper {
-  // if you have a border like below you need also to convert the height
-  --properheight: calc(var(--border-default-height) * 2);
-  --min-height-removal: calc(var(--header-top-height) + var(--properheight));
-  min-height: calc(100vh - var(--min-height-removal));
 
   display: flex;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  vertical-align: center;
-  border: var(--border-default-height) solid gray;
-  text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
