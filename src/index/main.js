@@ -16,7 +16,8 @@ import {
   faScroll,
   faFileCode,
   faFileAlt,
-  faAt
+  faAt,
+  faInfo
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -33,6 +34,7 @@ library.add(faFileCode);
 library.add(faBox);
 library.add(faAt);
 library.add(faFileAlt);
+library.add(faInfo);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

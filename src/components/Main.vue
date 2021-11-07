@@ -3,7 +3,7 @@
     <ol class="main-list">
       <li class="main-list-item">
         <div class="item-header">
-          <img class="item-image" src="/safari-pinned-tab.svg" />
+          <font-awesome-icon class="item-image" :icon="['fas', 'info']" />
         </div>
         <div class="item-content">
           <div class="item-title">
