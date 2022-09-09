@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/guilbep/guilbep/compare/v2.0.0...v2.1.0) (2022-09-09)
+
+
+### Features
+
+* **docs:** aefae ([ee3af98](https://github.com/guilbep/guilbep/commit/ee3af9834b9c6195c7fb26114eb2093528f2fea5))
+
+
+### Bug Fixes
+
+* **fafa:** adeaf ([a6b95c9](https://github.com/guilbep/guilbep/commit/a6b95c9003cce411b426215459f7ab5e1be75fe4))
+
 ## [2.0.0](https://github.com/guilbep/guilbep/compare/v1.0.0...v2.0.0) (2022-09-09)
 
 
