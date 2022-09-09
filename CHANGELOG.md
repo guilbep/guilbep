@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/guilbep/guilbep/compare/v1.0.0...v2.0.0) (2022-09-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **index:** add comments to test github action
+
+### Bug Fixes
+
+* **index:** add comments to test github action ([b1766cc](https://github.com/guilbep/guilbep/commit/b1766cc03e629f2855837ef0cf1d85f011ef802f))
+
 ## 1.0.0 (2022-09-09)
 
 
