@@ -4,7 +4,8 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-    "favicons": "favicons",
+    "favicons": "node scripts/favicons.mjs",
+    "sharp": "node scripts/sharp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
     "vite": "^5.2.13"
   },
   "devDependencies": {
-    "favicons": "^7.2.0"
+    "favicons": "^7.2.0",
+    "sharp": "^0.33.4"
   }
 }

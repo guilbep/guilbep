@@ -13,7 +13,7 @@ const htmlBasename = "index.html"; // HTML file basename.
 
 // Configuration (see above in the README file).
 const configuration = {
-  path: "./public/assets/favicons/", // Path for overriding default icons path. `string`
+  path: "./assets/favicons/", // Path for overriding default icons path. `string`
   appName: "Pierre Guilbert", // Your application's name. `string`
   appShortName: "pierre guilbert", // Your application's short name. `string`
   appDescription: "Personal home page", // Your application's description. `string`
