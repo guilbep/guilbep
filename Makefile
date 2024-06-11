@@ -29,4 +29,4 @@ build:
 	npx vite build public
 
 deploy:
-	lftp "ftp://${LFTP_LOGIN}@${LFTP_FQDN}" --password "${LFTP_PASSWORD}" -e "mirror -R -c -P=10 public/dist/ /pierreguilbert.com; bye"
+	lftp  "ftp://${LFTP_LOGIN}@${LFTP_FQDN}" --env-password -e "mirror -R -c -P=10 public/dist/ /pierreguilbert.com; bye"
