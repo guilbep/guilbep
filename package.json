@@ -4,6 +4,7 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
+    "favicons": "favicons",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/guilbep/guilbep#readme",
   "dependencies": {
     "vite": "^5.2.13"
+  },
+  "devDependencies": {
+    "favicons": "^7.2.0"
   }
 }
