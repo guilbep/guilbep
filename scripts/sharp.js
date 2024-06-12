@@ -1,5 +1,5 @@
 const sharp = require('sharp');
-const outputDir = 'public/assets/favicons'; // Replace with your desired output directory
+const outputDir = 'pierreguilbert/public/favicons'; // Replace with your desired output directory
 const path = require('path')
 const pngFiles = [
   'favicon-16x16.png',

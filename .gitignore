@@ -26,3 +26,4 @@ yarn-error.log*
 *.sw?
 .env
 public/dist
+pierreguilbert/dist/*
