@@ -7,6 +7,7 @@ const pngFiles = [
   'favicon-48x48.png',
   'apple-touch-icon-120x120.png',
   'android-chrome-144x144.png',
+  'android-chrome-256x256.png',
   // Add other PNG icons if needed
 ];
 
