@@ -46,6 +46,7 @@ a[data-v-399b0d11]:hover {
 @media only screen and (max-width: 640px) {
   .nav[data-v-399b0d11] {
     padding: 20px 5px 0;
+    flex-wrap: wrap;
   }
 
   .nav a[data-v-399b0d11] {
@@ -173,6 +174,16 @@ a[data-v-1a6964ee]:hover {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+@media only screen and (max-width: 640px) {
+  .main-list-item[data-v-1a6964ee] {
+    flex-direction: column;
+  }
+  .main-list-item[data-v-1a6964ee] .item-header {
+    display:none;
+  }
+
+}
+
 
 .item-description[data-v-1a6964ee] {
   line-height: 1.7;
@@ -1014,11 +1025,11 @@ body {
                       /favicons/android-chrome-256x256.webp 2x"
               type="image/webp"
             />
-            <!-- <source
+            <source
               loading="lazy"
               srcset="/favicons/android-chrome-144x144.png"
               type="image/png"
-            /> -->
+            />
             <img
               data-v-2a8705a8=""
               id="avatar"
@@ -1188,41 +1199,6 @@ body {
                   I'm going to be a dad again soon! So I'm also preparing for
                   that.
                 </span>
-              </div>
-            </div>
-          </li>
-          <li data-v-1a6964ee="" class="main-list-item" style="display: none">
-            <div data-v-1a6964ee="" class="item-header">
-              <svg
-                data-v-1a6964ee=""
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="scroll"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-                class="item-image svg-inline--fa fa-scroll fa-w-20"
-              >
-                <path
-                  data-v-1a6964ee=""
-                  fill="currentColor"
-                  d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"
-                  class=""
-                ></path>
-              </svg>
-            </div>
-            <div data-v-1a6964ee="" class="item-content">
-              <div data-v-1a6964ee="" class="item-title">
-                <h2 data-v-1a6964ee="">Blog</h2>
-              </div>
-              <div data-v-1a6964ee="" class="item-description">
-                <p data-v-1a6964ee="">
-                  My latests thoughts are written on my personal hosted domain.
-                  Main goal is to share knowledge and to catalog good ideas and
-                  practices.
-                  <a data-v-1a6964ee="" href="/blog"> Link to my blog</a>
-                </p>
               </div>
             </div>
           </li>
