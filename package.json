@@ -18,11 +18,11 @@
     "url": "https://github.com/guilbep/guilbep/issues"
   },
   "homepage": "https://github.com/guilbep/guilbep#readme",
-  "dependencies": {
-    "vite": "^5.2.13"
-  },
   "devDependencies": {
     "favicons": "^7.2.0",
-    "sharp": "^0.33.4"
+    "http-server": "^14.1.1",
+    "sharp": "^0.33.4",
+    "vite": "^5.2.13",
+    "vite-plugin-pwa": "^0.20.0"
   }
 }

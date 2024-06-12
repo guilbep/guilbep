@@ -7,13 +7,13 @@ import path from "path";
 // const outputDir = '../public/assets/'; // Replace with your desired output directory
 
 
-const src = "./public/assets/pgu.jpeg"; // Icon source file path.
-const dest = "./public/assets/favicons"; // Output directory path.
+const src = "./pierreguilbert/public/pgu.jpeg"; // Icon source file path.
+const dest = "./pierreguilbert/public/favicons"; // Output directory path.
 const htmlBasename = "index.html"; // HTML file basename.
 
 // Configuration (see above in the README file).
 const configuration = {
-  path: "./assets/favicons/", // Path for overriding default icons path. `string`
+  path: "./favicons/", // Path for overriding default icons path. `string`
   appName: "Pierre Guilbert", // Your application's name. `string`
   appShortName: "pierre guilbert", // Your application's short name. `string`
   appDescription: "Personal home page", // Your application's description. `string`

@@ -21,12 +21,15 @@ env:
 	@echo "DOCKER_CONFIG_PATH = ${DOCKER_CONFIG_PATH}"
 
 serve:
-	npx vite serve public --port 3000
+	npx vite serve pierreguilbert --port 3000
 
 run: serve
 
 build:
-	npx vite build public
+	npx vite build pierreguilbert
+
+serve-dist:
+	npx http-server pierreguilbert/dist  --port 3001
 
 deploy:
-	lftp  "sftp://${LFTP_LOGIN}@${LFTP_FQDN}" --env-password -e "mirror -R -c -P=10 public/dist/ /pierreguilbert.com; bye"
+	lftp  "sftp://${LFTP_LOGIN}@${LFTP_FQDN}" --env-password -e "mirror -R -c -P=10 pierreguilbert/dist/ /pierreguilbert.com; bye"
