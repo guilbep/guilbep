@@ -7,4 +7,5 @@
 
 
 here is my personal website:
-     https://pierreguilbert.com
+     https://pierreguilbert.com / fallback: https://guilbep.github.io/guilbep/
+     
