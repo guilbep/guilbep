@@ -6,7 +6,7 @@
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/guilbep",
+  "start_url": "/",
   "id": "/?v=1.0.0",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
