@@ -1,9 +1,28 @@
 import { VitePWA } from 'vite-plugin-pwa'
+import { createHtmlPlugin } from 'vite-plugin-html'
+import { ViteMinifyPlugin } from 'vite-plugin-minify'
 import { defineConfig } from 'vite'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    createHtmlPlugin({
+      minify: true,
+    }),
+    // input https://www.npmjs.com/package/html-minifier-terser options
+    ViteMinifyPlugin({
+      extensions: ['html'],
+      collapseWhitespace: true,
+      removeComments: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+    }),
     VitePWA({ registerType: 'autoUpdate',
+      build: true,
       includeAssets: [],
       manifest: {
         "name": "Pierre Guilbert",
@@ -82,5 +101,13 @@ export default defineConfig({
         ]
       }
      })
-  ]
+  ],
+  build: {
+    minify: 'esbuild', // Use 'esbuild' for JS and CSS minification
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+  },
 })
