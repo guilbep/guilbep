@@ -7,7 +7,13 @@ description: "Notes, references, and good ideas — Pierre Guilbert's blog."
 
 A place to share knowledge, catalogue good ideas and practices, and surface thoughts gathered on the web.
 
-> Heads up: most of the entries below are **TODO** — titles I want to write about. Posts will turn into real links as they get written.
+## Recent
+
+<!-- posts -->
+
+## Backlog
+
+> Most entries below are **TODO** — titles I want to write about. Items move up to "Recent" as they get written.
 
 ## Good practices
 

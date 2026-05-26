@@ -26,6 +26,12 @@
       "hidden": false
     },
     {
+      "key": "blog/why-12factor",
+      "path": "/blog/why-12factor",
+      "title": "Why 12factor is still the best thing around?",
+      "hidden": true
+    },
+    {
       "key": "404",
       "path": "/404",
       "title": {
