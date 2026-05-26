@@ -116,7 +116,7 @@ function renderPostList(items) {
     const date = p.date
       ? `<time class="post-date" datetime="${fmtDate(p.date)}">${fmtDate(p.date)}</time>`
       : "";
-    return `  <li>\n    <a class="post-link" href="/blog/${p.slug}"><span class="post-title">${escapeHtml(p.title)}</span>${date}</a>\n    ${desc}\n  </li>`;
+    return `  <li>\n    <a class="post-link" href="${p.slug}"><span class="post-title">${escapeHtml(p.title)}</span>${date}</a>\n    ${desc}\n  </li>`;
   });
   return `<ol class="post-list">\n${rows.join("\n")}\n</ol>`;
 }

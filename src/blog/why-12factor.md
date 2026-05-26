@@ -5,7 +5,7 @@ description: "Notes on what still holds up — and what doesn't — about the 12
 draft: false
 ---
 
-[← back to blog](/blog)
+[← back to blog](..)
 
 # Why 12factor is still the best thing around?
 
