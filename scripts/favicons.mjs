@@ -1,54 +1,68 @@
-import favicons from "favicons";
-import fs from "fs/promises";
-import path from "path";
+#!/usr/bin/env node
+// Rasterise src/assets/images/mark.svg into the icon set we actually ship.
+// Because the source is a flat SVG mark (not a photograph), each output is
+// 1–3 KB instead of 30–60 KB.
+//
+// Outputs:
+//   public/favicon.svg                            (already copied from src)
+//   public/favicon.ico                            16x16, single-resolution
+//   public/assets/images/favicon/favicon-16x16.png
+//   public/assets/images/favicon/favicon-32x32.png
+//   public/assets/images/favicon/apple-touch-icon.png   180x180
+//   public/assets/images/favicon/android-chrome-192x192.png
+//   public/assets/images/favicon/android-chrome-384x384.png  (PWA, for Lighthouse)
 
-// Source uses the 200×200 site avatar so favicon and on-page portrait share
-// the same visual identity. Swap to a higher-res source if you ever want
-// crisper icons.
-const SRC = "./src/assets/images/avatar.jpg";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync, statSync } from "fs";
+import { join } from "path";
+import sharp from "sharp";
+import toIco from "to-ico";
 
-// Output mirrors the path our webmanifest expects (per the plugin's bundled
-// manifest.json.njk template). public/ is copied verbatim to dist/.
-const DEST = "./public/assets/images/favicon";
+const SRC = "src/assets/images/mark.svg";
+const FAVICON_DIR = "public/assets/images/favicon";
 
-// Restrict the favicons package to the icons we actually reference. By default
-// it emits ~70 files including iOS startup screens — pure bloat for us.
-const configuration = {
-  path: "/assets/images/favicon/",
-  appName: "Pierre Guilbert",
-  appShortName: "Pierre Guilbert",
-  appDescription: "Engineering web apps since 2011.",
-  developerName: "Pierre Guilbert",
-  developerURL: "https://pierreguilbert.com",
-  background: "#ffffff",
-  theme_color: "#ffffff",
-  display: "standalone",
-  icons: {
-    android: ["android-chrome-192x192.png", "android-chrome-384x384.png"],
-    appleIcon: ["apple-touch-icon.png"],
-    appleStartup: false,
-    favicons: ["favicon-16x16.png", "favicon-32x32.png", "favicon.ico"],
-    windows: false,
-    yandex: false,
-  },
-};
+mkdirSync(FAVICON_DIR, { recursive: true });
 
-const response = await favicons(SRC, configuration);
-await fs.mkdir(DEST, { recursive: true });
+// 1. Make sure /favicon.svg in public matches the source.
+copyFileSync(SRC, "public/favicon.svg");
 
-await Promise.all(
-  response.images.map((image) =>
-    fs.writeFile(path.join(DEST, image.name), image.contents),
-  ),
-);
+const svgBuf = readFileSync(SRC);
 
-// Also drop favicon.ico at the public root so /favicon.ico requests resolve
-// without needing a <link rel="icon"> entry.
-const ico = response.images.find((i) => i.name === "favicon.ico");
-if (ico) {
-  await fs.writeFile("./public/favicon.ico", ico.contents);
+async function rasterise(size, outPath) {
+  await sharp(svgBuf, { density: 384 })   // render SVG at high DPI then downscale
+    .resize(size, size, { fit: "contain" })
+    .png({ compressionLevel: 9, palette: true })
+    .toFile(outPath);
 }
 
-console.log(
-  `Wrote ${response.images.length} favicon files to ${DEST} (+ /favicon.ico)`,
-);
+await rasterise(16, join(FAVICON_DIR, "favicon-16x16.png"));
+await rasterise(32, join(FAVICON_DIR, "favicon-32x32.png"));
+await rasterise(180, join(FAVICON_DIR, "apple-touch-icon.png"));
+await rasterise(192, join(FAVICON_DIR, "android-chrome-192x192.png"));
+await rasterise(384, join(FAVICON_DIR, "android-chrome-384x384.png"));
+
+// 2. Build /favicon.ico from a single 16x16 PNG.
+const ico16 = await sharp(svgBuf, { density: 384 })
+  .resize(16, 16)
+  .png({ compressionLevel: 9 })
+  .toBuffer();
+const icoBuf = await toIco([ico16]);
+writeFileSync("public/favicon.ico", icoBuf);
+
+// 3. Report.
+const files = [
+  "public/favicon.svg",
+  "public/favicon.ico",
+  join(FAVICON_DIR, "favicon-16x16.png"),
+  join(FAVICON_DIR, "favicon-32x32.png"),
+  join(FAVICON_DIR, "apple-touch-icon.png"),
+  join(FAVICON_DIR, "android-chrome-192x192.png"),
+  join(FAVICON_DIR, "android-chrome-384x384.png"),
+];
+let total = 0;
+for (const f of files) {
+  const size = statSync(f).size;
+  total += size;
+  console.log(`  ${size.toString().padStart(6)} B  ${f}`);
+}
+console.log(`  ${"".padStart(6)}    ────────`);
+console.log(`  ${total.toString().padStart(6)} B  total`);

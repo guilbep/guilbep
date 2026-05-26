@@ -26,11 +26,11 @@
     "vite-ssr-nunjucks-i18n-basic": "^2.3.0"
   },
   "devDependencies": {
-    "favicons": "^7.2.0",
     "gray-matter": "^4.0.3",
     "http-server": "^14.1.1",
     "marked": "^18.0.4",
     "sharp": "^0.33.4",
+    "to-ico": "^1.1.5",
     "vite": "^8.0.14"
   }
 }

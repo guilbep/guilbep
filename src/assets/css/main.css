@@ -49,10 +49,18 @@ main { max-width: var(--max); margin: 0 auto; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem 1.25rem;
   padding: 0.75rem 0 1.25rem;
 }
+.mark {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  line-height: 0;
+  flex-shrink: 0;
+}
+.mark svg { display: block; }
+.mark:hover { color: var(--accent-hover); text-decoration: none; }
 .page-nav,
 .socials ul,
 .locales {
@@ -62,7 +70,7 @@ main { max-width: var(--max); margin: 0 auto; }
   margin: 0;
   padding: 0;
 }
-.page-nav { gap: 1rem; font-family: var(--mono); font-size: 0.9375rem; }
+.page-nav { gap: 1rem; font-family: var(--mono); font-size: 0.9375rem; margin-right: auto; }
 .page-nav a { color: var(--muted); }
 .page-nav a[aria-current="page"] { color: var(--fg); }
 .page-nav a:hover { color: var(--accent); text-decoration: none; }
