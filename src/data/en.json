@@ -11,8 +11,10 @@
   },
   "hero": {
     "name": "Pierre Guilbert",
-    "tagline_before": "Engineering Web app since",
-    "tagline_year": "2011"
+    "tagline_before": "Engineering web apps since",
+    "tagline_year": "2011",
+    "cta": "Get in touch",
+    "email_label": "contact@pierreguilbert.com"
   },
   "links": {
     "github": "https://github.com/guilbep",

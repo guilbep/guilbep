@@ -12,7 +12,9 @@
   "hero": {
     "name": "Pierre Guilbert",
     "tagline_before": "Développement web depuis",
-    "tagline_year": "2011"
+    "tagline_year": "2011",
+    "cta": "Me contacter",
+    "email_label": "contact@pierreguilbert.com"
   },
   "links": {
     "github": "https://github.com/guilbep",

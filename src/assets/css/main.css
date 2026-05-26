@@ -90,6 +90,23 @@ main,
 .tagline { color: var(--muted); margin: 0; }
 .tagline .year { color: var(--accent); font-weight: 600; }
 
+.cta-row { margin: 1.25rem 0 0.25rem; }
+.cta-primary {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background-color 0.15s ease;
+}
+.cta-primary:hover,
+.cta-primary:focus { background: #228074; text-decoration: none; }
+
+.cta-email { margin: 0; font-size: 0.875rem; color: var(--muted); }
+.cta-email a { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.cta-email a:hover { color: var(--fg); }
+
 .info-list {
   list-style: none;
   padding: 0;
@@ -116,8 +133,27 @@ main,
 
 .info-body p { margin: 0.5rem 0; }
 
-.cv-files { list-style: none; padding: 0; margin: 0.5rem 0 0; }
-.cv-files li { margin: 0.25rem 0; }
+.cv-files {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cv-files li { margin: 0; }
+.cv-files a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.cv-files a:hover,
+.cv-files a:focus { background: var(--accent); color: #fff; text-decoration: none; }
 
 .bottom {
   margin-top: 3rem;
