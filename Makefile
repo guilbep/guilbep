@@ -136,10 +136,10 @@ docker-headers: ## Probe a running container for gzip + cache headers on key pat
 # =============================================================================
 
 .PHONY: env
-env: ## Print the resolved env (sanity check before deploy)
+env: ## Print the resolved env (sanity check before deploy) — never prints secret values
 	@echo "LFTP_LOGIN         = $${LFTP_LOGIN:-<unset>}"
 	@echo "LFTP_FQDN          = $${LFTP_FQDN:-<unset>}"
-	@echo "LFTP_PASSWORD      = $${LFTP_PASSWORD:+<set>}$${LFTP_PASSWORD:-<unset>}"
+	@echo "LFTP_PASSWORD      = $$([ -n \"$$LFTP_PASSWORD\" ] && echo '<set>' || echo '<unset>')"
 	@echo "IMAGE_VERSION      = $(IMAGE_VERSION)"
 	@echo "DOCKER_CONFIG_PATH = $(DOCKER_CONFIG_PATH)"
 
