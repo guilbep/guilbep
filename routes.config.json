@@ -14,11 +14,11 @@
         "fr": "Accueil"
       },
       "themeColor": "#ffffff",
-      "hidden": false
+      "hidden": true
     },
     {
       "key": "blog",
-      "path": "/blog",
+      "path": "/blog/",
       "title": {
         "en": "Blog",
         "fr": "Blog"

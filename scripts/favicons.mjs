@@ -15,7 +15,27 @@
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync, statSync } from "fs";
 import { join } from "path";
 import sharp from "sharp";
-import toIco from "to-ico";
+
+// Minimal ICO encoder for a single 16×16 PNG.
+// ICO format: 6-byte header + 16-byte image-directory entry + raw PNG bytes.
+// See https://en.wikipedia.org/wiki/ICO_(file_format)
+function pngToIco16(pngBuf) {
+  const headerSize = 22;
+  const buf = Buffer.alloc(headerSize + pngBuf.length);
+  buf.writeUInt16LE(0, 0);       // reserved
+  buf.writeUInt16LE(1, 2);       // 1 = icon
+  buf.writeUInt16LE(1, 4);       // image count
+  buf.writeUInt8(16, 6);         // width
+  buf.writeUInt8(16, 7);         // height
+  buf.writeUInt8(0, 8);          // palette colour count (0 = no palette)
+  buf.writeUInt8(0, 9);          // reserved
+  buf.writeUInt16LE(1, 10);      // colour planes
+  buf.writeUInt16LE(32, 12);     // bits per pixel
+  buf.writeUInt32LE(pngBuf.length, 14);  // image data size
+  buf.writeUInt32LE(headerSize, 18);     // image data offset
+  pngBuf.copy(buf, headerSize);
+  return buf;
+}
 
 const SRC = "src/assets/images/mark.svg";
 const FAVICON_DIR = "public/assets/images/favicon";
@@ -45,8 +65,7 @@ const ico16 = await sharp(svgBuf, { density: 384 })
   .resize(16, 16)
   .png({ compressionLevel: 9 })
   .toBuffer();
-const icoBuf = await toIco([ico16]);
-writeFileSync("public/favicon.ico", icoBuf);
+writeFileSync("public/favicon.ico", pngToIco16(ico16));
 
 // 3. Report.
 const files = [

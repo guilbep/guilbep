@@ -51,6 +51,16 @@ dev: blog ## Start the Vite dev server (HMR, /en /fr)
 .PHONY: build
 build: blog ## Build the production site to dist/
 	npx vite build
+	@# Move /<locale>/blog.html into /<locale>/blog/index.html. The plugin
+	@# always emits flat .html files; with a /blog/ directory containing
+	@# posts, Apache mod_dir picks the directory first and 403s without an
+	@# index. Putting the page inside the directory resolves cleanly.
+	@for loc in en fr; do \
+		if [ -f dist/$$loc/blog.html ] && [ -d dist/$$loc/blog ]; then \
+			mv dist/$$loc/blog.html dist/$$loc/blog/index.html; \
+			echo "  ✓ dist/$$loc/blog.html → dist/$$loc/blog/index.html"; \
+		fi; \
+	done
 
 .PHONY: preview
 preview: ## Serve the built dist/ on http://localhost:3001
@@ -153,11 +163,14 @@ env: ## Print the resolved env (sanity check before deploy) — never prints sec
 	@echo "DOCKER_CONFIG_PATH = $(DOCKER_CONFIG_PATH)"
 
 .PHONY: deploy
-deploy: ## Mirror dist/ to the SFTP host defined in .env (lftp)
+deploy: ## Mirror dist/ to the SFTP host defined in .env (lftp).
 	@if [ -z "$$LFTP_LOGIN" ] || [ -z "$$LFTP_FQDN" ] || [ -z "$$LFTP_PASSWORD" ]; then \
 		echo "Missing LFTP_LOGIN / LFTP_FQDN / LFTP_PASSWORD — populate .env (see .env.example)"; \
 		exit 1; \
 	fi
 	@test -d dist || { echo "dist/ missing — run 'make build' first"; exit 1; }
+	@# Explicitly remove known-stale paths first (mirror doesn't delete by default).
+	@# /<locale>/blog.html got promoted into /<locale>/blog/index.html on this
+	@# build; leaving the flat file around would let Apache pick the wrong target.
 	lftp "sftp://$$LFTP_LOGIN@$$LFTP_FQDN" --env-password \
-		-e "mirror -R -c -P=10 dist/ /pierreguilbert.com; bye"
+		-e "rm -f /pierreguilbert.com/en/blog.html; rm -f /pierreguilbert.com/fr/blog.html; mirror -R -c -P=10 dist/ /pierreguilbert.com; bye"
