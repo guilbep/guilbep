@@ -17,6 +17,15 @@
       "hidden": false
     },
     {
+      "key": "blog",
+      "path": "/blog/",
+      "title": {
+        "en": "Blog",
+        "fr": "Blog"
+      },
+      "hidden": false
+    },
+    {
       "key": "404",
       "path": "/404",
       "title": {

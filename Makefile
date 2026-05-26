@@ -40,12 +40,16 @@ clean: ## Remove node_modules, dist, .tmp, and the lockfile
 # Develop
 # =============================================================================
 
+.PHONY: blog
+blog: ## Convert src/blog/*.md → src/pages/blog*.njk via marked
+	node scripts/build-blog.mjs
+
 .PHONY: dev
-dev: ## Start the Vite dev server (HMR, /en /fr)
+dev: blog ## Start the Vite dev server (HMR, /en /fr)
 	npx vite
 
 .PHONY: build
-build: ## Build the production site to dist/
+build: blog ## Build the production site to dist/
 	npx vite build
 
 .PHONY: preview
