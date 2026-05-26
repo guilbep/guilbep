@@ -20,7 +20,7 @@
   },
   "homepage": "https://pierreguilbert.com",
   "dependencies": {
-    "vite-ssr-nunjucks-i18n-basic": "^2.0.1"
+    "vite-ssr-nunjucks-i18n-basic": "^2.1.0"
   },
   "devDependencies": {
     "favicons": "^7.2.0",
