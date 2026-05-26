@@ -14,7 +14,8 @@
     "tagline_before": "Engineering web apps since",
     "tagline_year": "2011",
     "cta": "Get in touch",
-    "email_label": "contact@pierreguilbert.com"
+    "email_label": "contact@pierreguilbert.com",
+    "availability": "Open to interesting projects"
   },
   "links": {
     "github": "https://github.com/guilbep",
@@ -22,6 +23,7 @@
     "gitlab": "https://gitlab.com/guilbep",
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
+    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Hello%20from%20pierreguilbert.com",
     "cv_en": "/PierreGuilbertCV_english.pdf",
     "cv_fr": "/PierreGuilbertCV_french.pdf"
   },

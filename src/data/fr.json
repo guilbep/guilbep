@@ -14,7 +14,8 @@
     "tagline_before": "Développement web depuis",
     "tagline_year": "2011",
     "cta": "Me contacter",
-    "email_label": "contact@pierreguilbert.com"
+    "email_label": "contact@pierreguilbert.com",
+    "availability": "Ouvert aux projets intéressants"
   },
   "links": {
     "github": "https://github.com/guilbep",
@@ -22,6 +23,7 @@
     "gitlab": "https://gitlab.com/guilbep",
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
+    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Bonjour%20depuis%20pierreguilbert.com",
     "cv_en": "/PierreGuilbertCV_english.pdf",
     "cv_fr": "/PierreGuilbertCV_french.pdf"
   },

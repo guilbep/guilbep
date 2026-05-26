@@ -104,26 +104,24 @@ main,
 .cta-primary:focus { background: #228074; text-decoration: none; }
 
 .cta-email { margin: 0; font-size: 0.875rem; color: var(--muted); }
-.cta-email a { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.cta-email a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
 .cta-email a:hover { color: var(--fg); }
+
+.cta-availability {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
 
 .info-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 3rem;
+  gap: 2.5rem;
 }
-
-.info-list > li {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: var(--gap);
-  align-items: start;
-}
-
-.info-icon { color: var(--fg); }
-.info-icon svg { display: block; }
 
 .info-body h2 {
   margin: 0 0 0.5rem;
@@ -164,10 +162,5 @@ main,
 .bottom p { margin: 0.25rem 0; }
 
 @media (max-width: 480px) {
-  .info-list > li {
-    grid-template-columns: 40px 1fr;
-    gap: 0.75rem;
-  }
-  .info-icon svg { width: 32px; height: 32px; }
   .hero h1 { font-size: 1.5rem; }
 }

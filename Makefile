@@ -79,14 +79,19 @@ lint: ## Check formatting without writing
 	fi
 
 # =============================================================================
-# Measure (15 KB transfer budget)
+# Measure (transfer budgets: 3 KB primary target, 14 KB hard ceiling)
 # =============================================================================
 
-BUDGET_BYTES ?= 15360
+# Primary target: fits in the TCP slow-start window with headroom for headers.
+BUDGET_BYTES           ?= 3072
+# Secondary (hard) ceiling: the classic 14 KB rule.
+SECONDARY_BUDGET_BYTES ?= 14336
 
 .PHONY: measure
-measure: ## Check that /en and /fr stay under the 15 KB total-transfer budget
-	@BUDGET_BYTES=$(BUDGET_BYTES) node scripts/measure-budget.mjs
+measure: ## Check per-locale transfer against the 3 KB target / 14 KB ceiling
+	@BUDGET_BYTES=$(BUDGET_BYTES) \
+	 SECONDARY_BUDGET_BYTES=$(SECONDARY_BUDGET_BYTES) \
+	 node scripts/measure-budget.mjs
 
 # =============================================================================
 # Assets
