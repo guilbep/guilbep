@@ -1,30 +1,31 @@
 {
   "name": "pierreguilbert.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "public/index.html",
+  "version": "2.0.0",
+  "description": "Personal site of Pierre Guilbert — multi-locale static build using vite-ssr-nunjucks-i18n-basic.",
+  "type": "module",
   "scripts": {
-    "favicons": "node scripts/favicons.mjs",
-    "sharp": "node scripts/sharp.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 3001",
+    "favicons": "node scripts/favicons.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guilbep/guilbep.git"
   },
-  "author": "",
+  "author": "Pierre Guilbert",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/guilbep/guilbep/issues"
   },
-  "homepage": "https://github.com/guilbep/guilbep#readme",
+  "homepage": "https://pierreguilbert.com",
+  "dependencies": {
+    "vite-ssr-nunjucks-i18n-basic": "^2.0.1"
+  },
   "devDependencies": {
     "favicons": "^7.2.0",
     "http-server": "^14.1.1",
     "sharp": "^0.33.4",
-    "vite": "^5.2.13",
-    "vite-plugin-html": "^3.2.2",
-    "vite-plugin-minify": "^2.0.1",
-    "vite-plugin-pwa": "^0.20.0"
+    "vite": "^5.4.0"
   }
 }

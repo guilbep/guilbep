@@ -1,0 +1,29 @@
+{
+  "hostname": "https://pierreguilbert.com",
+  "locales": ["en", "fr"],
+  "basePath": {
+    "en": "/en",
+    "fr": "/fr"
+  },
+  "routes": [
+    {
+      "key": "landing_page",
+      "path": "/",
+      "title": {
+        "en": "Pierre Guilbert",
+        "fr": "Pierre Guilbert"
+      },
+      "themeColor": "#ffffff",
+      "hidden": false
+    },
+    {
+      "key": "404",
+      "path": "/404",
+      "title": {
+        "en": "Not Found",
+        "fr": "Page introuvable"
+      },
+      "hidden": true
+    }
+  ]
+}

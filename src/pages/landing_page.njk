@@ -1,0 +1,66 @@
+{% extends "main.njk" %}
+
+{% block content %}
+<section class="hero">
+  <picture>
+    <source type="image/webp" srcset="{{ asset('/assets/images/avatar.webp') }}">
+    <img class="avatar" src="{{ asset('/assets/images/avatar.jpg') }}" alt="{{ t('meta.alt_avatar') }}" width="240" height="240" loading="eager" decoding="async">
+  </picture>
+  <h1>{{ t('hero.name') }}</h1>
+  <p class="tagline">{{ t('hero.tagline_before') }} <span class="year">{{ t('hero.tagline_year') }}</span></p>
+  <hr>
+</section>
+
+<ol class="info-list">
+  <li>
+    <div class="info-icon" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="48" height="48" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm1.5 8.5h-3v-1h1V8h-1V7h2v4.5h1v1z"/></svg>
+    </div>
+    <div class="info-body">
+      <h2>{{ t('about.title') }}</h2>
+      <p>{{ t('about.paragraphs.0') | safe }}</p>
+      <p>{{ t('about.paragraphs.1', {
+        enac: '<a href="https://www.epfl.ch/schools/enac/about/data-at-enac/enac-it4research/" rel="noopener">ENAC-IT4R</a>',
+        epfl: '<a href="https://people.epfl.ch/pierre.guilbert?lang=' + locale + '" rel="noopener">EPFL</a>'
+      }) | safe }}</p>
+      <p>{{ t('about.paragraphs.2', {
+        prevision: '<a href="https://fr.linkedin.com/company/prevision.io" rel="noopener">Prevision.io</a>'
+      }) | safe }}</p>
+      <p>{{ t('about.paragraphs.3', {
+        numberly: '<a href="https://numberly.com/" rel="noopener">Numberly</a>'
+      }) | safe }}</p>
+    </div>
+  </li>
+
+  <li>
+    <div class="info-icon" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="48" height="48" fill="currentColor"><path d="M3 1h7l3 3v11H3V1zm7 0v3h3"/><path d="M5 7h6v1H5V7zm0 2h6v1H5V9zm0 2h4v1H5v-1z"/></svg>
+    </div>
+    <div class="info-body">
+      <h2>{{ t('cv.title') }}</h2>
+      <p>{{ t('cv.paragraphs.0', {
+        epita: '<a href="https://www.epita.fr/" rel="noopener">EPITA</a>'
+      }) | safe }}</p>
+      <p>{{ t('cv.paragraphs.1', {
+        memory_foundation: '<a href="https://en.wikipedia.org/wiki/Internet_Memory_Foundation" rel="noopener">Internet Memory Foundation</a>'
+      }) | safe }}</p>
+      <p>{{ t('cv.paragraphs.2') }}</p>
+      <ul class="cv-files">
+        <li><a href="{{ t('links.cv_en') }}" download>{{ t('cv.cv_english_label') }}</a></li>
+        <li><a href="{{ t('links.cv_fr') }}" download>{{ t('cv.cv_french_label') }}</a></li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <div class="info-icon" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="48" height="48" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm1 8.4-3.6 2.1.4.7 4.2-2.5V3h-1v5.4z"/></svg>
+    </div>
+    <div class="info-body">
+      <h2>{{ t('now.title') }}</h2>
+      <p>{{ t('now.paragraphs.0') }}</p>
+      <p>{{ t('now.paragraphs.1') }}</p>
+    </div>
+  </li>
+</ol>
+{% endblock %}

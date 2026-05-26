@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ t("meta.title") }}</title>
+<meta name="description" content="{{ t('meta.description') }}">
+<meta name="theme-color" content="{{ themeColor or '#ffffff' }}">
+<link rel="canonical" href="{{ currentPage | absoluteUrl(meta.siteUrl) }}">
+{% for l in alternates %}<link rel="alternate" hreflang="{{ l }}" href="{{ getLocalizedUrl(currentPage, l) }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ getLocalizedUrl(currentPage, defaultLocale) }}">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="{{ asset('/assets/styles/main.css') }}">
