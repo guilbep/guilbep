@@ -37,8 +37,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: false,
-    minify: "esbuild",
     cssMinify: true,
+    // Vite 8 uses rolldown + oxc by default; explicit esbuild requires
+    // installing esbuild separately. Leaving it unset = pick the bundled minifier.
     rollupOptions: {
       input: "virtual:static-site",
       output: { entryFileNames: ".vite/[name].js" },
