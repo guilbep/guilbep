@@ -2,10 +2,7 @@
 
 {% block content %}
 <section class="hero">
-  <picture>
-    <source type="image/webp" srcset="{{ asset('/assets/images/avatar.webp') }}">
-    <img class="avatar" src="{{ asset('/assets/images/avatar.jpg') }}" alt="{{ t('meta.alt_avatar') }}" width="240" height="240" loading="lazy" fetchpriority="low" decoding="async">
-  </picture>
+  <img class="avatar" src="{{ data_uri('/assets/images/avatar.webp') }}" alt="{{ t('meta.alt_avatar') }}" width="200" height="200" decoding="async">
   <h1>{{ t('hero.name') }}</h1>
   <p class="tagline">{{ t('hero.tagline_before') }} <span class="year">{{ t('hero.tagline_year') }}</span></p>
   <hr>
