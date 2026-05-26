@@ -19,6 +19,7 @@ export default defineConfig({
       },
       emitSitemaps: true,
       emit404s: true,
+      emitWebmanifest: false,
       linkRewrite: "off",
     }),
     {
