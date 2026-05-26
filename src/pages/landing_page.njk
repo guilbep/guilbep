@@ -39,10 +39,9 @@
       <p>{{ t('cv.paragraphs.1', {
         memory_foundation: '<a href="https://en.wikipedia.org/wiki/Internet_Memory_Foundation" rel="noopener">Internet Memory Foundation</a>'
       }) | safe }}</p>
-      <p>{{ t('cv.paragraphs.2') }}</p>
       <ul class="cv-files">
-        <li><a href="{{ t('links.cv_en') }}" download>{{ t('cv.cv_english_label') }}</a></li>
-        <li><a href="{{ t('links.cv_fr') }}" download>{{ t('cv.cv_french_label') }}</a></li>
+        <li><a href="{{ t('links.cv') }}" download>{{ t('cv.download_label') }}</a></li>
+        <li><a href="/pierreguilbert.vcf" download>{{ t('cv.vcard_label') }}</a></li>
       </ul>
     </div>
   </li>

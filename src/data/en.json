@@ -24,8 +24,7 @@
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
     "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Hello%20from%20pierreguilbert.com",
-    "cv_en": "/PierreGuilbertCV_english.pdf",
-    "cv_fr": "/PierreGuilbertCV_french.pdf"
+    "cv": "/PierreGuilbertCV_english.pdf"
   },
   "about": {
     "title": "About me",
@@ -40,15 +39,10 @@
     "title": "Curriculum Vitae",
     "paragraphs": [
       "Graduated from {{epita}} in 2011, SCIA master.",
-      "Studied Biology and Modelisation at Paris VI between 2011 and 2013, working part-time at the {{memory_foundation}}.",
-      "Up-to-date version with contact details:"
+      "Studied Biology and Modelisation at Paris VI between 2011 and 2013, working part-time at the {{memory_foundation}}."
     ],
-    "cv_english_label": "CV — English (PDF)",
-    "cv_french_label": "CV — French (PDF)"
-  },
-  "footer": {
-    "contact_label": "Email",
-    "vcard_label": "Download vCard"
+    "download_label": "Download CV (PDF)",
+    "vcard_label": "Contact card (vCard)"
   },
   "language_switcher": {
     "label": "Language",

@@ -24,8 +24,7 @@
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
     "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Bonjour%20depuis%20pierreguilbert.com",
-    "cv_en": "/PierreGuilbertCV_english.pdf",
-    "cv_fr": "/PierreGuilbertCV_french.pdf"
+    "cv": "/PierreGuilbertCV_french.pdf"
   },
   "about": {
     "title": "À propos",
@@ -40,15 +39,10 @@
     "title": "Curriculum Vitæ",
     "paragraphs": [
       "Diplômé de l'{{epita}} en 2011, spécialité SCIA.",
-      "J'ai étudié la Biologie et la Modélisation à Paris VI entre 2011 et 2013, en travaillant à temps partiel à l'{{memory_foundation}}.",
-      "Version à jour avec mes coordonnées :"
+      "J'ai étudié la Biologie et la Modélisation à Paris VI entre 2011 et 2013, en travaillant à temps partiel à l'{{memory_foundation}}."
     ],
-    "cv_english_label": "CV — Anglais (PDF)",
-    "cv_french_label": "CV — Français (PDF)"
-  },
-  "footer": {
-    "contact_label": "Courriel",
-    "vcard_label": "Télécharger la vCard"
+    "download_label": "Télécharger le CV (PDF)",
+    "vcard_label": "Carte de contact (vCard)"
   },
   "language_switcher": {
     "label": "Langue",
