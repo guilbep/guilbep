@@ -53,6 +53,7 @@ main { max-width: var(--max); margin: 0 auto; }
   padding: 0.5rem 0 1.25rem;
 }
 
+.page-nav,
 .socials ul,
 .locales {
   display: flex;
@@ -64,6 +65,14 @@ main { max-width: var(--max); margin: 0 auto; }
   flex-wrap: wrap;
   justify-content: center;
 }
+.page-nav {
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  gap: 1rem;
+}
+.page-nav a { color: var(--muted); }
+.page-nav a[aria-current="page"] { color: var(--fg); }
+.page-nav a:hover { color: var(--accent); text-decoration: none; }
 
 .socials a {
   display: inline-flex;

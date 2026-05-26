@@ -10,8 +10,8 @@
       "key": "landing_page",
       "path": "/",
       "title": {
-        "en": "Pierre Guilbert",
-        "fr": "Pierre Guilbert"
+        "en": "Home",
+        "fr": "Accueil"
       },
       "themeColor": "#ffffff",
       "hidden": false

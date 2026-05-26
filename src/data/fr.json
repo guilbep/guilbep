@@ -21,7 +21,6 @@
     "github": "https://github.com/guilbep",
     "email": "mailto:contact@pierreguilbert.com",
     "gitlab": "https://gitlab.com/guilbep",
-    "blog_label": "Blog",
     "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Bonjour%20depuis%20pierreguilbert.com",
     "cv": "/PierreGuilbertCV_french.pdf"
   },
@@ -29,9 +28,9 @@
     "title": "À propos",
     "paragraphs": [
       "Je travaille à temps plein avec le web depuis 2011.",
-      "Je suis actuellement à l'{{enac}} @ {{epfl}}, où j'accompagne les chercheurs tout au long du cycle de vie de leurs données — des pipelines d'acquisition aux interfaces de visualisation sur mesure.",
-      "Avant cela, j'ai aidé {{prevision}} à passer leur plateforme d'IA à l'échelle et à livrer leur outillage de machine learning.",
-      "Plus tôt, j'étais lead dev chez {{numberly}}, façonnant leurs produits ad-tech comme développeur dev-ops / full-stack."
+      "À l'{{enac}} @ {{epfl}} : j'accompagne les chercheurs sur le cycle de vie des données, des pipelines d'acquisition aux interfaces de visualisation sur mesure.",
+      "Avant, j'ai aidé {{prevision}} à scaler leur plateforme d'IA et à livrer leur outillage machine learning.",
+      "Plus tôt, lead dev chez {{numberly}} — produits ad-tech, dev-ops et full-stack."
     ]
   },
   "cv": {
