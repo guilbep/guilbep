@@ -7,8 +7,7 @@
   },
   "meta": {
     "title": "Pierre Guilbert — Engineering Web app since 2011",
-    "description": "Personal site of Pierre Guilbert. Engineering web apps since 2011.",
-    "alt_avatar": "Portrait of Pierre Guilbert"
+    "description": "Personal site of Pierre Guilbert. Engineering web apps since 2011."
   },
   "hero": {
     "name": "Pierre Guilbert",
@@ -19,9 +18,6 @@
     "github": "https://github.com/guilbep",
     "email": "mailto:contact@pierreguilbert.com",
     "gitlab": "https://gitlab.com/guilbep",
-    "linkedin": "https://www.linkedin.com/in/pierreguilbert/",
-    "twitter": "https://twitter.com/guilbep",
-    "facebook": "https://www.facebook.com/pierre.guilbert.79",
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
     "cv_en": "/PierreGuilbertCV_english.pdf",

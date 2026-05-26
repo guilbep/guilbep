@@ -7,8 +7,7 @@
   },
   "meta": {
     "title": "Pierre Guilbert — Développement web depuis 2011",
-    "description": "Site personnel de Pierre Guilbert. Développement d'applications web depuis 2011.",
-    "alt_avatar": "Portrait de Pierre Guilbert"
+    "description": "Site personnel de Pierre Guilbert. Développement d'applications web depuis 2011."
   },
   "hero": {
     "name": "Pierre Guilbert",
@@ -19,9 +18,6 @@
     "github": "https://github.com/guilbep",
     "email": "mailto:contact@pierreguilbert.com",
     "gitlab": "https://gitlab.com/guilbep",
-    "linkedin": "https://www.linkedin.com/in/pierreguilbert/",
-    "twitter": "https://twitter.com/guilbep",
-    "facebook": "https://www.facebook.com/pierre.guilbert.79",
     "blog": "https://blog.pierreguilbert.com",
     "blog_label": "Blog",
     "cv_en": "/PierreGuilbertCV_english.pdf",
