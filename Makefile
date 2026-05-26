@@ -173,4 +173,4 @@ deploy: ## Mirror dist/ to the SFTP host defined in .env (lftp).
 	@# /<locale>/blog.html got promoted into /<locale>/blog/index.html on this
 	@# build; leaving the flat file around would let Apache pick the wrong target.
 	lftp "sftp://$$LFTP_LOGIN@$$LFTP_FQDN" --env-password \
-		-e "rm -f /pierreguilbert.com/en/blog.html; rm -f /pierreguilbert.com/fr/blog.html; mirror -R -c -P=10 dist/ /pierreguilbert.com; bye"
+		-e "rm -f /pierreguilbert.com/en/blog.html; rm -f /pierreguilbert.com/fr/blog.html; rm -f /pierreguilbert.com/en/site.webmanifest; rm -f /pierreguilbert.com/fr/site.webmanifest; mirror -R -c -P=10 dist/ /pierreguilbert.com; bye"
