@@ -31,9 +31,9 @@
     "title": "À propos",
     "paragraphs": [
       "Je travaille à temps plein avec le web depuis 2011.",
-      "Je suis actuellement à l'{{enac}} @ {{epfl}}, où j'accompagne les chercheurs tout au long de leur cycle de vie des données — de la mise en place de pipelines d'acquisition au déploiement d'interfaces de visualisation sur mesure.",
-      "Mon dernier projet était chez {{prevision}}, où j'ai aidé à passer leur plateforme d'IA à l'échelle et à construire un outil de machine learning de qualité.",
-      "Auparavant, j'étais lead dev chez {{numberly}}, façonnant leurs produits ad-tech comme développeur dev-ops / full-stack."
+      "Je suis actuellement à l'{{enac}} @ {{epfl}}, où j'accompagne les chercheurs tout au long du cycle de vie de leurs données — des pipelines d'acquisition aux interfaces de visualisation sur mesure.",
+      "Avant cela, j'ai aidé {{prevision}} à passer leur plateforme d'IA à l'échelle et à livrer leur outillage de machine learning.",
+      "Plus tôt, j'étais lead dev chez {{numberly}}, façonnant leurs produits ad-tech comme développeur dev-ops / full-stack."
     ]
   },
   "cv": {
@@ -41,17 +41,10 @@
     "paragraphs": [
       "Diplômé de l'{{epita}} en 2011, spécialité SCIA.",
       "J'ai étudié la Biologie et la Modélisation à Paris VI entre 2011 et 2013, en travaillant à temps partiel à l'{{memory_foundation}}.",
-      "Vous trouverez une version à jour de mon CV avec mes coordonnées :"
+      "Version à jour avec mes coordonnées :"
     ],
-    "cv_english_label": "PierreGuilbertCV_anglais.pdf",
-    "cv_french_label": "PierreGuilbertCV_francais.pdf"
-  },
-  "now": {
-    "title": "En ce moment",
-    "paragraphs": [
-      "Je m'occupe en ce moment de quelques tomates dans mon potager, je transforme un Volkswagen T5 en van aménagé encore meilleur qu'il ne l'est déjà, et je bidouille mes serveurs perso. C'est le quotidien de tout le monde, non ?",
-      "Je vais être à nouveau papa très bientôt, donc je m'y prépare aussi."
-    ]
+    "cv_english_label": "CV — Anglais (PDF)",
+    "cv_french_label": "CV — Français (PDF)"
   },
   "footer": {
     "contact_label": "Courriel",

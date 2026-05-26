@@ -54,7 +54,7 @@ preview: ## Serve the built dist/ on http://localhost:3001
 
 .PHONY: serve-dist
 serve-dist: ## Serve dist/ via http-server (no SPA fallback)
-	npx http-server dist --port 3001
+	npx http-server dist --port 3001 -b
 
 # =============================================================================
 # Quality
@@ -97,8 +97,39 @@ favicons: ## Regenerate favicons from the source via scripts/favicons.mjs
 	node scripts/favicons.mjs
 
 .PHONY: avatar
-avatar: ## Resize the source avatar into a 240×240 WebP + JPEG fallback
+avatar: ## Resize the source avatar into a 200×200 WebP + JPEG fallback
 	node scripts/resize-avatar.mjs
+
+# =============================================================================
+# Docker (gzip-enabled local serve via nginx)
+# =============================================================================
+
+DOCKER_IMAGE  ?= pierreguilbert-com
+DOCKER_PORT   ?= 8080
+DOCKER_NAME   ?= pierreguilbert-com-test
+
+.PHONY: docker-build
+docker-build: ## Build the local-serve Docker image (assumes dist/ exists)
+	@test -d dist || { echo "dist/ missing — run 'make build' first"; exit 1; }
+	docker build -t $(DOCKER_IMAGE) .
+
+.PHONY: docker-serve
+docker-serve: docker-build ## Serve dist/ on http://localhost:$(DOCKER_PORT) with nginx + gzip
+	@docker rm -f $(DOCKER_NAME) >/dev/null 2>&1 || true
+	docker run --rm -d --name $(DOCKER_NAME) -p $(DOCKER_PORT):8080 $(DOCKER_IMAGE)
+	@echo "Serving on http://localhost:$(DOCKER_PORT)/  ('make docker-stop' to stop)"
+
+.PHONY: docker-stop
+docker-stop: ## Stop the local-serve container
+	docker rm -f $(DOCKER_NAME) >/dev/null 2>&1 || true
+
+.PHONY: docker-headers
+docker-headers: ## Probe a running container for gzip + cache headers on key paths
+	@for path in / /en/ /fr/ /assets/styles/$$(ls dist/assets/styles | head -1) sitemap-index.xml; do \
+		echo ">> $$path"; \
+		curl -sI -H 'Accept-Encoding: gzip' "http://localhost:$(DOCKER_PORT)$$path" | head -8; \
+		echo; \
+	done
 
 # =============================================================================
 # Deploy

@@ -1,16 +1,29 @@
-import sharp from 'sharp';
+import sharp from "sharp";
+import { readFileSync, renameSync, statSync } from "fs";
 
-const src = 'src/assets/images/avatar.jpg';
-const dst = 'src/assets/images/avatar.jpg';
-const dstWebp = 'src/assets/images/avatar.webp';
-const dstTmp = 'src/assets/images/avatar-240.jpg';
+// Avatar source file. The current src/assets/images/avatar.jpg has already been
+// resized in place — restart from a higher-resolution source if you want bigger.
+const SRC = "src/assets/images/avatar.jpg";
+const DIM = 200; // CSS-displayed size is 140px → 1.43× DPR cover on 2× screens
+const JPG_QUALITY = 80; // fallback for non-WebP browsers
+const WEBP_QUALITY = 72;
 
-const buf = await import('fs').then(m => m.readFileSync(src));
+const buf = readFileSync(SRC);
 
-await sharp(buf).resize(240, 240).jpeg({ quality: 82, progressive: true, mozjpeg: true }).toFile(dstTmp);
-await sharp(buf).resize(240, 240).webp({ quality: 78, effort: 6 }).toFile(dstWebp);
+const tmpJpg = "src/assets/images/avatar-resized.jpg";
+const outWebp = "src/assets/images/avatar.webp";
 
-const fs = await import('fs');
-fs.renameSync(dstTmp, dst);
-console.log('jpg:', fs.statSync(dst).size, 'bytes');
-console.log('webp:', fs.statSync(dstWebp).size, 'bytes');
+await sharp(buf)
+  .resize(DIM, DIM)
+  .jpeg({ quality: JPG_QUALITY, progressive: true, mozjpeg: true })
+  .toFile(tmpJpg);
+
+await sharp(buf)
+  .resize(DIM, DIM)
+  .webp({ quality: WEBP_QUALITY, effort: 6 })
+  .toFile(outWebp);
+
+renameSync(tmpJpg, SRC);
+
+console.log(`jpg  ${DIM}x${DIM} q=${JPG_QUALITY}: ${statSync(SRC).size} B`);
+console.log(`webp ${DIM}x${DIM} q=${WEBP_QUALITY}: ${statSync(outWebp).size} B`);
