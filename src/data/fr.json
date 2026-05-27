@@ -9,12 +9,9 @@
     "title": "Pierre Guilbert — Développement web depuis 2011",
     "description": "Site personnel de Pierre Guilbert. Développement d'applications web depuis 2011."
   },
-  "hero": {
-    "name": "Pierre Guilbert",
+  "intro": {
     "tagline_before": "Développement web depuis",
     "tagline_year": "2011",
-    "cta": "Me contacter",
-    "email_label": "contact@pierreguilbert.com",
     "availability": "Ouvert aux projets intéressants"
   },
   "links": {

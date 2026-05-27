@@ -9,12 +9,9 @@
     "title": "Pierre Guilbert — Engineering Web app since 2011",
     "description": "Personal site of Pierre Guilbert. Engineering web apps since 2011."
   },
-  "hero": {
-    "name": "Pierre Guilbert",
+  "intro": {
     "tagline_before": "Engineering web apps since",
     "tagline_year": "2011",
-    "cta": "Get in touch",
-    "email_label": "contact@pierreguilbert.com",
     "availability": "Open to interesting projects"
   },
   "links": {

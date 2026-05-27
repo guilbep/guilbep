@@ -50,7 +50,7 @@ main {
 }
 
 /* mono everywhere that isn't body copy */
-.mark, .page-nav, .locales, .socials a, .tagline .year, .cta-email {
+.mark, .page-nav, .locales, .socials a, .tagline .year {
   font-family: var(--mono);
 }
 /* muted text colour on nav-like / secondary things */
@@ -58,7 +58,6 @@ main {
 .locales,
 .locales a,
 .tagline,
-.cta-email a,
 .cta-availability {
   color: var(--muted);
 }
@@ -118,7 +117,6 @@ main {
   border-radius: 999px;
 }
 .cta-primary:hover { background: var(--accent-hover); text-decoration: none; }
-.cta-email { margin: 0.65rem 0 0; font-size: 0.8125rem; }
 .cta-availability { margin: 0.5rem 0 0; font-size: 0.8125rem; }
 
 .info { margin: 1.5rem 0 0; }
