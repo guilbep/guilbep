@@ -33,7 +33,7 @@ for (const file of htmlFiles(DIST)) {
   const kb = (bytes / 1024).toFixed(2);
   const mg = (bytes * G_PER_BYTE * 1000).toFixed(2);
 
-  const footer = `<footer class="co2"><small>≈ ${mg} mg CO₂ / visit · ${kb} KB gzipped</small></footer>`;
+  const footer = `<footer class="co2"><small>≈ ${mg} mg CO₂ / visit · ${kb} KB compressed body</small></footer>`;
   html = html.replace("</body>", `${footer}</body>`);
   writeFileSync(file, html);
   total++;
