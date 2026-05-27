@@ -12,7 +12,13 @@
 //   public/assets/images/favicon/android-chrome-192x192.png
 //   public/assets/images/favicon/android-chrome-384x384.png  (PWA, for Lighthouse)
 
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync, statSync } from "fs";
+import {
+  copyFileSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+  statSync,
+} from "fs";
 import { join } from "path";
 import sharp from "sharp";
 
@@ -22,17 +28,17 @@ import sharp from "sharp";
 function pngToIco16(pngBuf) {
   const headerSize = 22;
   const buf = Buffer.alloc(headerSize + pngBuf.length);
-  buf.writeUInt16LE(0, 0);       // reserved
-  buf.writeUInt16LE(1, 2);       // 1 = icon
-  buf.writeUInt16LE(1, 4);       // image count
-  buf.writeUInt8(16, 6);         // width
-  buf.writeUInt8(16, 7);         // height
-  buf.writeUInt8(0, 8);          // palette colour count (0 = no palette)
-  buf.writeUInt8(0, 9);          // reserved
-  buf.writeUInt16LE(1, 10);      // colour planes
-  buf.writeUInt16LE(32, 12);     // bits per pixel
-  buf.writeUInt32LE(pngBuf.length, 14);  // image data size
-  buf.writeUInt32LE(headerSize, 18);     // image data offset
+  buf.writeUInt16LE(0, 0); // reserved
+  buf.writeUInt16LE(1, 2); // 1 = icon
+  buf.writeUInt16LE(1, 4); // image count
+  buf.writeUInt8(16, 6); // width
+  buf.writeUInt8(16, 7); // height
+  buf.writeUInt8(0, 8); // palette colour count (0 = no palette)
+  buf.writeUInt8(0, 9); // reserved
+  buf.writeUInt16LE(1, 10); // colour planes
+  buf.writeUInt16LE(32, 12); // bits per pixel
+  buf.writeUInt32LE(pngBuf.length, 14); // image data size
+  buf.writeUInt32LE(headerSize, 18); // image data offset
   pngBuf.copy(buf, headerSize);
   return buf;
 }
@@ -48,7 +54,7 @@ copyFileSync(SRC, "public/favicon.svg");
 const svgBuf = readFileSync(SRC);
 
 async function rasterise(size, outPath) {
-  await sharp(svgBuf, { density: 384 })   // render SVG at high DPI then downscale
+  await sharp(svgBuf, { density: 384 }) // render SVG at high DPI then downscale
     .resize(size, size, { fit: "contain" })
     .png({ compressionLevel: 9, palette: true })
     .toFile(outPath);

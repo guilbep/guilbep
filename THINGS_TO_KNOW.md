@@ -20,14 +20,14 @@ Here’s how you might set it up in your Nginx config file:
 ```nginx
 server {
     listen 80;
-    
+
     location / {
         proxy_pass http://127.0.0.1:8080;  # Assuming Traefik is on port 8080
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        
+
         # Gzip compression settings
         gzip on;
         gzip_min_length 2048;  # Only compress files larger than 2KB

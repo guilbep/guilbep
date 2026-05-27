@@ -26,4 +26,6 @@ await sharp(buf)
 renameSync(tmpJpg, SRC);
 
 console.log(`jpg  ${DIM}x${DIM} q=${JPG_QUALITY}: ${statSync(SRC).size} B`);
-console.log(`webp ${DIM}x${DIM} q=${WEBP_QUALITY}: ${statSync(outWebp).size} B`);
+console.log(
+  `webp ${DIM}x${DIM} q=${WEBP_QUALITY}: ${statSync(outWebp).size} B`,
+);

@@ -13,7 +13,7 @@ import { join } from "path";
 import { gzipSync } from "zlib";
 
 const DIST = "dist";
-const G_PER_BYTE = 0.001144116732462 / (5.76 * 1024);   // ≈ 1.94e-7
+const G_PER_BYTE = 0.001144116732462 / (5.76 * 1024); // ≈ 1.94e-7
 
 function* htmlFiles(dir) {
   for (const f of readdirSync(dir, { withFileTypes: true })) {
@@ -26,8 +26,8 @@ function* htmlFiles(dir) {
 let total = 0;
 for (const file of htmlFiles(DIST)) {
   let html = readFileSync(file, "utf8");
-  if (html.includes('class="co2"')) continue;      // idempotent
-  if (!html.includes("</body>")) continue;         // skip non-page output
+  if (html.includes('class="co2"')) continue; // idempotent
+  if (!html.includes("</body>")) continue; // skip non-page output
 
   const bytes = gzipSync(html, { level: 9 }).length;
   const kb = (bytes / 1024).toFixed(2);

@@ -49,8 +49,8 @@ for (const loc of ["en", "fr"]) {
     total > SECONDARY
       ? "OVER SECONDARY"
       : total > PRIMARY
-      ? "OVER PRIMARY"
-      : "OK";
+        ? "OVER PRIMARY"
+        : "OK";
   if (total > SECONDARY) fail = true;
   const cssLabel = cssMatch ? `CSS.gz=${cssGz}B` : "CSS=inlined";
   console.log(

@@ -21,7 +21,14 @@
 // is present and there's at least one published post, the list is inserted
 // right after the first <h1>. With zero published posts, no list is rendered.
 
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, rmSync } from "fs";
+import {
+  readFileSync,
+  writeFileSync,
+  readdirSync,
+  mkdirSync,
+  existsSync,
+  rmSync,
+} from "fs";
 import { join, basename } from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
@@ -35,13 +42,14 @@ if (!existsSync(SRC_DIR)) {
   process.exit(0);
 }
 
-if (existsSync(OUT_POSTS_DIR)) rmSync(OUT_POSTS_DIR, { recursive: true, force: true });
+if (existsSync(OUT_POSTS_DIR))
+  rmSync(OUT_POSTS_DIR, { recursive: true, force: true });
 mkdirSync(OUT_POSTS_DIR, { recursive: true });
 
 const mdFiles = readdirSync(SRC_DIR).filter((f) => f.endsWith(".md"));
 
-const posts = [];       // collected metadata for the index list
-let indexEntry = null;  // { content, frontmatter } for index.md
+const posts = []; // collected metadata for the index list
+let indexEntry = null; // { content, frontmatter } for index.md
 
 for (const file of mdFiles) {
   const raw = readFileSync(join(SRC_DIR, file), "utf8");
@@ -90,7 +98,9 @@ if (indexEntry) {
   }
 
   writeFileSync(OUT_INDEX, renderPagePartial(indexHtml));
-  console.log(`  ✓ index.md → ${OUT_INDEX}  (${posts.length} published post${posts.length === 1 ? "" : "s"})`);
+  console.log(
+    `  ✓ index.md → ${OUT_INDEX}  (${posts.length} published post${posts.length === 1 ? "" : "s"})`,
+  );
 }
 
 // Clean empty posts dir.
