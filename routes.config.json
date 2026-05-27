@@ -20,8 +20,8 @@
       "key": "blog",
       "path": "/blog/",
       "title": {
-        "en": "Blog",
-        "fr": "Blog"
+        "en": "blog",
+        "fr": "blog"
       },
       "hidden": false
     },

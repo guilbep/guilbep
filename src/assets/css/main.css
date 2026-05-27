@@ -103,12 +103,11 @@ main {
 .page-nav a:hover, .locales a:hover { color: var(--accent); text-decoration: none; }
 .socials a:hover { color: var(--accent-hover); text-decoration: none; }
 
-.intro { margin: 0.5rem 0 0; }
+.intro { margin: 0.5rem 0 0; text-align: center; }
 .tagline { margin: 0.35rem 0 0; }
 .tagline .year { color: var(--accent); font-weight: 600; }
-
-.contact-card { margin: 1.25rem 0 0; text-align: center; }
 .cta-primary {
+  margin-top: 1.25rem;
   display: inline-block;
   padding: 0.7rem 1.6rem;
   background: var(--accent);
@@ -143,7 +142,6 @@ main {
 @media (max-width: 480px) {
   body { padding: 0.5rem 0.875rem 2rem; }
   .top { padding: 0.5rem 0 0.75rem; }
-  .contact-card { margin-top: 1rem; }
   .info { margin-top: 1.25rem; }
 }
 
