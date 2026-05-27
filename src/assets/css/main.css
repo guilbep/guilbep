@@ -7,7 +7,6 @@
   --accent-tint-border: #d3ebe5;
   --bg: #fff;
   --border: #ececec;
-  --status: #16a34a;
   --max: 640px;
   --mono: ui-monospace, Menlo, monospace;
 }
@@ -32,7 +31,8 @@
 html { background: var(--bg); }
 body {
   margin: 0;
-  font: 0.85rem/1.55 system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
   color: var(--fg);
   padding: 1rem 1rem 3rem;
 }
@@ -79,17 +79,13 @@ main {
   justify-content: center;
   width: 32px;
   height: 32px;
-  border: 1.5px solid color-mix(in srgb, currentColor 20%, transparent);
+  border: 1.5px solid var(--border);
   border-radius: 6px;
   color: var(--fg);
   font-weight: 700;
   font-size: 0.8125rem;
 }
-.mark:hover {
-  color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-  text-decoration: none;
-}
+.mark:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
 .page-nav,
 .socials ul,
@@ -122,15 +118,12 @@ main {
   margin: 0.5rem 0 0;
 }
 .intro h1 {
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-size: 1.75rem;
   margin: 0;
   font-weight: 800;
   line-height: 1.1;
 }
-.tagline {
-  margin: 0.35rem 0 0;
-  font-size: 1rem;
-}
+.tagline { margin: 0.35rem 0 0; }
 .tagline .year {
   color: var(--accent);
   font-weight: 600;
@@ -170,20 +163,7 @@ main {
   text-decoration-color: var(--accent);
 }
 
-.cta-availability {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0.5rem 0 0;
-  font-size: 0.8125rem;
-}
-.cta-availability::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--status);
-}
+.cta-availability { margin: 0.5rem 0 0; font-size: 0.8125rem; }
 
 .info {
   margin: 1.5rem 0 0;
