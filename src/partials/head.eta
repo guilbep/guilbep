@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><%= t('meta.title') %></title>
+<meta name="description" content="<%= t('meta.description') %>">
+<meta name="theme-color" content="<%= themeColor || '#ffffff' %>">
+<link rel="canonical" href="<%= absoluteUrl(currentPage, meta.siteUrl) %>">
+<% for (const l of alternates) { %><link rel="alternate" hreflang="<%= l %>" href="<%= getLocalizedUrl(currentPage, l) %>">
+<% } %><link rel="alternate" hreflang="x-default" href="<%= getLocalizedUrl(currentPage, defaultLocale) %>">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<style><%~ inline_asset('/assets/styles/main.css') %><% if (page.key === 'blog' || page.key.startsWith('blog/')) { %><%~ inline_asset('/assets/styles/blog.css') %><% } %></style>

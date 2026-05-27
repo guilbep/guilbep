@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Convert src/blog/*.md into src/pages/blog*.njk so the multi-locale plugin
+// Convert src/blog/*.md into src/pages/blog*.eta so the multi-locale plugin
 // can render them like any other page.
 //
 // Conventions:
-//   src/blog/index.md       → src/pages/blog.njk            (key "blog")
-//   src/blog/<slug>.md      → src/pages/blog/<slug>.njk     (key "blog/<slug>")
+//   src/blog/index.md       → src/pages/blog.eta            (key "blog")
+//   src/blog/<slug>.md      → src/pages/blog/<slug>.eta     (key "blog/<slug>")
 //
 // Post frontmatter:
 //   ---
@@ -34,7 +34,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 const SRC_DIR = "src/blog";
-const OUT_INDEX = "src/pages/blog.njk";
+const OUT_INDEX = "src/pages/blog.eta";
 const OUT_POSTS_DIR = "src/pages/blog";
 
 if (!existsSync(SRC_DIR)) {
@@ -63,9 +63,9 @@ for (const file of mdFiles) {
 
   // Render the post page.
   const html = marked.parse(content);
-  const njk = renderPagePartial(html);
-  writeFileSync(join(OUT_POSTS_DIR, `${slug}.njk`), njk);
-  console.log(`  ✓ ${file} → src/pages/blog/${slug}.njk`);
+  const eta = renderPagePartial(html);
+  writeFileSync(join(OUT_POSTS_DIR, `${slug}.eta`), eta);
+  console.log(`  ✓ ${file} → src/pages/blog/${slug}.eta`);
 
   if (!frontmatter.draft) {
     posts.push({
@@ -111,7 +111,11 @@ if (existsSync(OUT_POSTS_DIR) && readdirSync(OUT_POSTS_DIR).length === 0) {
 // ---------------------------------------------------------------------------
 
 function renderPagePartial(bodyHtml) {
-  return `{% extends "main.njk" %}\n\n{% block content %}\n<article class="prose">\n{% raw %}\n${bodyHtml}\n{% endraw %}\n</article>\n{% endblock %}\n`;
+  // Defensive: HTML-escape any literal `<%` in the rendered markdown so Eta
+  // doesn't try to interpret it as a template tag. Browsers render `&lt;%`
+  // identically to `<%`, so this is invisible to readers.
+  const safe = bodyHtml.replace(/<%/g, "&lt;%");
+  return `<% layout('/layouts/main') %>\n<article class="prose">\n${safe}\n</article>\n`;
 }
 
 function renderPostList(items) {

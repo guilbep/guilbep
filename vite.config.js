@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { createMultiLocalePlugin } from "vite-ssr-nunjucks-i18n-basic";
+import { createMultiLocalePlugin } from "vite-ssr-i18n-basic";
 
 export default defineConfig({
   plugins: [

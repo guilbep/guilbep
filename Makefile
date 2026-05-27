@@ -13,7 +13,9 @@ DOCKER_CONFIG_PATH := $(shell pwd)
 
 # FILES can be overridden to target specific files (for git hooks / partial formats).
 FILES ?= .
-PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js %.njk,$(FILES))
+# .eta intentionally omitted: prettier has no Eta parser, so listing it
+# would imply formatting that doesn't actually happen.
+PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js,$(FILES))
 
 # =============================================================================
 # Help
@@ -31,6 +33,11 @@ help: ## Show available targets
 install: ## Install npm dependencies
 	npm install --ignore-scripts
 
+.PHONY: link
+link: ## (Local dev) re-link the sibling vite-ssr-i18n-basic checkout
+	npm link vite-ssr-i18n-basic
+	@echo "✓ node_modules/vite-ssr-i18n-basic → local checkout"
+
 .PHONY: clean
 clean: ## Remove node_modules, dist, .tmp, and the lockfile
 	rm -rf node_modules dist .tmp
@@ -41,7 +48,7 @@ clean: ## Remove node_modules, dist, .tmp, and the lockfile
 # =============================================================================
 
 .PHONY: blog
-blog: ## Convert src/blog/*.md → src/pages/blog*.njk via marked
+blog: ## Convert src/blog/*.md → src/pages/blog*.eta via marked
 	node scripts/build-blog.mjs
 
 .PHONY: dev

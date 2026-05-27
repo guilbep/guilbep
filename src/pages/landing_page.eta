@@ -1,29 +1,26 @@
-{% extends "main.njk" %}
-
-{% block content %}
+<% layout('/layouts/main') %>
 <section class="intro">
-  <p class="tagline">{{ t('intro.tagline_before') }} <span class="year">{{ t('intro.tagline_year') }}</span></p>
-  <a class="cta-primary" href="{{ t('links.email_with_subject') }}">contact@pierreguilbert.com</a>
-  <p class="cta-availability">{{ t('intro.availability') }}</p>
+  <p class="tagline"><%= t('intro.tagline_before') %> <span class="year"><%= t('intro.tagline_year') %></span></p>
+  <a class="cta-primary" href="<%= t('links.email_with_subject') %>">contact@pierreguilbert.com</a>
+  <p class="cta-availability"><%= t('intro.availability') %></p>
 </section>
 
 <section class="info">
-  <h2>{{ t('about.title') }}</h2>
-  <p>{{ t('about.paragraphs.0', {
+  <h2><%= t('about.title') %></h2>
+  <p><%~ t('about.paragraphs.0', {
     enac: '<a href="https://www.epfl.ch/schools/enac/about/data-at-enac/enac-it4research/" rel="noopener">ENAC-IT4R</a>',
     epfl: '<a href="https://people.epfl.ch/pierre.guilbert?lang=' + locale + '" rel="noopener">EPFL</a>'
-  }) | safe }}</p>
-  <p>{{ t('about.paragraphs.1', {
+  }) %></p>
+  <p><%~ t('about.paragraphs.1', {
     prevision: '<a href="https://fr.linkedin.com/company/prevision.io" rel="noopener">Prevision.io</a>',
     numberly: '<a href="https://numberly.com/" rel="noopener">Numberly</a>'
-  }) | safe }}</p>
+  }) %></p>
 </section>
 
 <section class="info">
-  <h2>{{ t('cv.title') }}</h2>
-  <p>{{ t('cv.paragraphs.0', {
+  <h2><%= t('cv.title') %></h2>
+  <p><%~ t('cv.paragraphs.0', {
     epita: '<a href="https://www.epita.fr/" rel="noopener">EPITA</a>',
     memory_foundation: '<a href="https://en.wikipedia.org/wiki/Internet_Memory_Foundation" rel="noopener">Internet Memory Foundation</a>'
-  }) | safe }}</p>
+  }) %></p>
 </section>
-{% endblock %}
