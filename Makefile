@@ -13,7 +13,9 @@ DOCKER_CONFIG_PATH := $(shell pwd)
 
 # FILES can be overridden to target specific files (for git hooks / partial formats).
 FILES ?= .
-PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js %.eta,$(FILES))
+# .eta intentionally omitted: prettier has no Eta parser, so listing it
+# would imply formatting that doesn't actually happen.
+PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js,$(FILES))
 
 # =============================================================================
 # Help
