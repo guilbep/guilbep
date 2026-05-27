@@ -1,7 +1,5 @@
 <header class="top">
-  <a class="mark" href="{{ getRouteUrl('landing_page') }}" aria-label="Home">
-    <img src="/favicon.svg" alt="" width="32" height="32">
-  </a>
+  <a class="mark" href="{{ getRouteUrl('landing_page') }}" aria-label="Home">PG</a>
   <nav class="page-nav" aria-label="Sections">
     {% for item in navItems %}
       <a href="{{ item.path }}"{% if page.key == item.key %} aria-current="page"{% endif %}>{{ item.title }}</a>

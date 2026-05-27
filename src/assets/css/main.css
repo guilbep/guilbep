@@ -59,12 +59,23 @@ main { max-width: var(--max); margin: 0 auto; }
 .mark {
   display: inline-flex;
   align-items: center;
-  color: var(--accent);
-  line-height: 0;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 6px;
+  color: var(--fg);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.8125rem;
   flex-shrink: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
-.mark svg { display: block; }
-.mark:hover { color: var(--accent-hover); text-decoration: none; }
+.mark:hover {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-decoration: none;
+}
 .page-nav,
 .socials ul,
 .locales {
@@ -185,4 +196,22 @@ main { max-width: var(--max); margin: 0 auto; }
   .top { padding: 0.5rem 0 0.75rem; }
   .contact-card { margin-top: 1rem; padding: 1rem; }
   .info { margin-top: 1.25rem; }
+}
+
+/* Smooth cross-document page transitions (progressive enhancement) */
+@view-transition { navigation: auto; }
+
+.top { view-transition-name: site-header; }
+
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; transform: translateY(8px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) { animation: vt-fade-out 160ms ease both; }
+  ::view-transition-new(root) { animation: vt-fade-in 260ms ease both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
 }
