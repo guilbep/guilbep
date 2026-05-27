@@ -9,4 +9,4 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-<style>{{ inline_asset('/assets/styles/main.css') }}{% if page.key == 'blog' %}{{ inline_asset('/assets/styles/blog.css') }}{% endif %}</style>
+<style>{{ inline_asset('/assets/styles/main.css') }}{% if page.key == 'blog' or page.key.startsWith('blog/') %}{{ inline_asset('/assets/styles/blog.css') }}{% endif %}</style>
