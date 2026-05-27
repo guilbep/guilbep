@@ -6,10 +6,8 @@
     {% endfor %}
   </nav>
   <nav class="socials" aria-label="Social links">
-    <ul>
-      <li><a href="{{ t('links.github') }}" rel="me noopener">github</a></li>
-      <li><a href="{{ t('links.email') }}">email</a></li>
-    </ul>
+    <a href="{{ t('links.github') }}" rel="me noopener">github</a>
+    <a href="{{ t('links.email') }}">email</a>
   </nav>
   <nav class="locales" aria-label="{{ t('language_switcher.label') }}">
     {% for l in alternates %}

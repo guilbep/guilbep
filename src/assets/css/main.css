@@ -77,13 +77,10 @@ main {
 .mark:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
 .page-nav,
-.socials ul,
+.socials,
 .locales {
   display: flex;
   align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 .page-nav {
   gap: 1rem;
@@ -94,9 +91,7 @@ main {
   color: var(--accent);
   font-weight: 700;
 }
-.socials ul {
-  gap: 1rem;
-}
+.socials { gap: 1rem; }
 .locales { gap: 0.5rem; }
 .socials a, .locales a { font-size: 0.875rem; }
 .socials a { color: var(--accent); font-weight: 600; }
@@ -120,15 +115,6 @@ main {
 
 .info { margin: 1.5rem 0 0; }
 .info p { margin: 0.4rem 0; }
-
-.cv-files {
-  list-style: none;
-  padding: 0;
-  margin: 0.85rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
 
 .co2 {
   max-width: var(--max);

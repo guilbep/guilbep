@@ -17,8 +17,7 @@
   "links": {
     "github": "https://github.com/guilbep",
     "email": "mailto:contact@pierreguilbert.com",
-    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Bonjour%20depuis%20pierreguilbert.com",
-    "cv": "/PierreGuilbertCV_french.pdf"
+    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Bonjour%20depuis%20pierreguilbert.com"
   },
   "about": {
     "title": "À propos",
@@ -31,9 +30,7 @@
     "title": "CV",
     "paragraphs": [
       "{{epita}} (SCIA), 2011. Avant, Biologie &amp; modélisation à Paris VI, à temps partiel à l'{{memory_foundation}}."
-    ],
-    "download_label": "CV (PDF)",
-    "vcard_label": "vCard"
+    ]
   },
   "language_switcher": {
     "label": "Langue",

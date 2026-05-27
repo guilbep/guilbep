@@ -17,8 +17,7 @@
   "links": {
     "github": "https://github.com/guilbep",
     "email": "mailto:contact@pierreguilbert.com",
-    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Hello%20from%20pierreguilbert.com",
-    "cv": "/PierreGuilbertCV_english.pdf"
+    "email_with_subject": "mailto:contact@pierreguilbert.com?subject=Hello%20from%20pierreguilbert.com"
   },
   "about": {
     "title": "About",
@@ -31,9 +30,7 @@
     "title": "CV",
     "paragraphs": [
       "{{epita}} (SCIA), 2011. Earlier, Biology &amp; modelling at Paris VI, part-time at the {{memory_foundation}}."
-    ],
-    "download_label": "CV (PDF)",
-    "vcard_label": "vCard"
+    ]
   },
   "language_switcher": {
     "label": "Language",
