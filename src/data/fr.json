@@ -27,20 +27,17 @@
   "about": {
     "title": "À propos",
     "paragraphs": [
-      "Je travaille à temps plein avec le web depuis 2011.",
-      "À l'{{enac}} @ {{epfl}} : j'accompagne les chercheurs sur le cycle de vie des données, des pipelines d'acquisition aux interfaces de visualisation sur mesure.",
-      "Avant, j'ai aidé {{prevision}} à scaler leur plateforme d'IA et à livrer leur outillage machine learning.",
-      "Plus tôt, lead dev chez {{numberly}} — produits ad-tech, dev-ops et full-stack."
+      "Actuellement à l'{{enac}} @ {{epfl}} — données de recherche, du pipeline d'acquisition aux visualisations sur mesure.",
+      "Avant : {{prevision}} (plateforme d'IA) et lead dev chez {{numberly}} (ad-tech)."
     ]
   },
   "cv": {
-    "title": "Curriculum Vitæ",
+    "title": "CV",
     "paragraphs": [
-      "Diplômé de l'{{epita}} en 2011, spécialité SCIA.",
-      "J'ai étudié la Biologie et la Modélisation à Paris VI entre 2011 et 2013, en travaillant à temps partiel à l'{{memory_foundation}}."
+      "{{epita}} (SCIA), 2011. Avant, Biologie &amp; modélisation à Paris VI, à temps partiel à l'{{memory_foundation}}."
     ],
-    "download_label": "Télécharger le CV (PDF)",
-    "vcard_label": "Carte de contact (vCard)"
+    "download_label": "CV (PDF)",
+    "vcard_label": "vCard"
   },
   "language_switcher": {
     "label": "Langue",

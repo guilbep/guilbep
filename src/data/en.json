@@ -25,22 +25,19 @@
     "cv": "/PierreGuilbertCV_english.pdf"
   },
   "about": {
-    "title": "About me",
+    "title": "About",
     "paragraphs": [
-      "I have been working full time with the web platform since 2011.",
-      "I'm currently at {{enac}} @ {{epfl}}, supporting researchers throughout their data lifecycle — from acquisition pipelines to custom visualisation interfaces.",
-      "Before that, I helped scale {{prevision}}'s AI platform and ship their machine-learning tooling.",
-      "Earlier, I was lead dev at {{numberly}}, shaping their ad-tech products as a dev-ops / full-stack developer."
+      "Now at {{enac}} @ {{epfl}} — research data, from acquisition pipelines to custom visualisation interfaces.",
+      "Before: {{prevision}} (AI platform) and lead dev at {{numberly}} (ad-tech)."
     ]
   },
   "cv": {
-    "title": "Curriculum Vitae",
+    "title": "CV",
     "paragraphs": [
-      "Graduated from {{epita}} in 2011, SCIA master.",
-      "Studied Biology and Modelisation at Paris VI between 2011 and 2013, working part-time at the {{memory_foundation}}."
+      "{{epita}} (SCIA), 2011. Earlier, Biology &amp; modelling at Paris VI, part-time at the {{memory_foundation}}."
     ],
-    "download_label": "Download CV (PDF)",
-    "vcard_label": "Contact card (vCard)"
+    "download_label": "CV (PDF)",
+    "vcard_label": "vCard"
   },
   "language_switcher": {
     "label": "Language",

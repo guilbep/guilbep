@@ -1,48 +1,38 @@
 {% extends "main.njk" %}
 
 {% block content %}
-<section class="hero">
+<section class="intro">
   <h1>{{ t('hero.name') }}</h1>
   <p class="tagline">{{ t('hero.tagline_before') }} <span class="year">{{ t('hero.tagline_year') }}</span></p>
-  <p class="cta-row">
-    <a class="cta-primary" href="{{ t('links.email_with_subject') }}">{{ t('hero.cta') }}</a>
-  </p>
+</section>
+
+<section class="contact-card">
+  <a class="cta-primary" href="{{ t('links.email_with_subject') }}">{{ t('hero.cta') }}</a>
   <p class="cta-email"><a href="{{ t('links.email') }}">{{ t('hero.email_label') }}</a></p>
   <p class="cta-availability">{{ t('hero.availability') }}</p>
 </section>
 
-<ol class="info-list">
-  <li>
-    <div class="info-body">
-      <h2>{{ t('about.title') }}</h2>
-      <p>{{ t('about.paragraphs.0') | safe }}</p>
-      <p>{{ t('about.paragraphs.1', {
-        enac: '<a href="https://www.epfl.ch/schools/enac/about/data-at-enac/enac-it4research/" rel="noopener">ENAC-IT4R</a>',
-        epfl: '<a href="https://people.epfl.ch/pierre.guilbert?lang=' + locale + '" rel="noopener">EPFL</a>'
-      }) | safe }}</p>
-      <p>{{ t('about.paragraphs.2', {
-        prevision: '<a href="https://fr.linkedin.com/company/prevision.io" rel="noopener">Prevision.io</a>'
-      }) | safe }}</p>
-      <p>{{ t('about.paragraphs.3', {
-        numberly: '<a href="https://numberly.com/" rel="noopener">Numberly</a>'
-      }) | safe }}</p>
-    </div>
-  </li>
+<section class="info">
+  <h2>{{ t('about.title') }}</h2>
+  <p>{{ t('about.paragraphs.0', {
+    enac: '<a href="https://www.epfl.ch/schools/enac/about/data-at-enac/enac-it4research/" rel="noopener">ENAC-IT4R</a>',
+    epfl: '<a href="https://people.epfl.ch/pierre.guilbert?lang=' + locale + '" rel="noopener">EPFL</a>'
+  }) | safe }}</p>
+  <p>{{ t('about.paragraphs.1', {
+    prevision: '<a href="https://fr.linkedin.com/company/prevision.io" rel="noopener">Prevision.io</a>',
+    numberly: '<a href="https://numberly.com/" rel="noopener">Numberly</a>'
+  }) | safe }}</p>
+</section>
 
-  <li>
-    <div class="info-body">
-      <h2>{{ t('cv.title') }}</h2>
-      <p>{{ t('cv.paragraphs.0', {
-        epita: '<a href="https://www.epita.fr/" rel="noopener">EPITA</a>'
-      }) | safe }}</p>
-      <p>{{ t('cv.paragraphs.1', {
-        memory_foundation: '<a href="https://en.wikipedia.org/wiki/Internet_Memory_Foundation" rel="noopener">Internet Memory Foundation</a>'
-      }) | safe }}</p>
-      <ul class="cv-files">
-        <li><a href="{{ t('links.cv') }}" download>{{ t('cv.download_label') }}</a></li>
-        <li><a href="/pierreguilbert.vcf" download>{{ t('cv.vcard_label') }}</a></li>
-      </ul>
-    </div>
-  </li>
-</ol>
+<section class="info">
+  <h2>{{ t('cv.title') }}</h2>
+  <p>{{ t('cv.paragraphs.0', {
+    epita: '<a href="https://www.epita.fr/" rel="noopener">EPITA</a>',
+    memory_foundation: '<a href="https://en.wikipedia.org/wiki/Internet_Memory_Foundation" rel="noopener">Internet Memory Foundation</a>'
+  }) | safe }}</p>
+  <ul class="cv-files">
+    <li><a href="{{ t('links.cv') }}" download>{{ t('cv.download_label') }}</a></li>
+    <li><a href="/pierreguilbert.vcf" download>{{ t('cv.vcard_label') }}</a></li>
+  </ul>
+</section>
 {% endblock %}

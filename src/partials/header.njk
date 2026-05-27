@@ -16,7 +16,9 @@
   </nav>
   <nav class="locales" aria-label="{{ t('language_switcher.label') }}">
     {% for l in alternates %}
-      <a href="{{ getLocalizedUrl(currentPage, l) }}" {% if isCurrentLocale(l) %}aria-current="page"{% endif %}>{{ t('language_switcher.' + l) }}</a>
+      {% if not isCurrentLocale(l) %}
+        <a href="{{ getLocalizedUrl(currentPage, l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ t('language_switcher.' + l) }}</a>
+      {% endif %}
     {% endfor %}
   </nav>
 </header>
