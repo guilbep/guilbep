@@ -1,7 +1,7 @@
 {
   "name": "pierreguilbert.com",
   "version": "2.0.0",
-  "description": "Personal site of Pierre Guilbert — multi-locale static build using vite-ssr-nunjucks-i18n-basic.",
+  "description": "Personal site of Pierre Guilbert — multi-locale static build using vite-ssr-i18n-basic.",
   "type": "module",
   "scripts": {
     "blog": "node scripts/build-blog.mjs",
@@ -22,14 +22,12 @@
     "url": "https://github.com/guilbep/guilbep/issues"
   },
   "homepage": "https://pierreguilbert.com",
-  "dependencies": {
-    "vite-ssr-nunjucks-i18n-basic": "^2.4.0"
-  },
   "devDependencies": {
     "gray-matter": "^4.0.3",
     "http-server": "^14.1.1",
     "marked": "^18.0.4",
     "sharp": "^0.33.4",
-    "vite": "^8.0.14"
+    "vite": "^8.0.14",
+    "vite-ssr-i18n-basic": "^3.0.0"
   }
 }

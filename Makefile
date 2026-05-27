@@ -33,6 +33,11 @@ help: ## Show available targets
 install: ## Install npm dependencies
 	npm install --ignore-scripts
 
+.PHONY: link
+link: ## (Local dev) re-link the sibling vite-ssr-i18n-basic checkout
+	npm link vite-ssr-i18n-basic
+	@echo "✓ node_modules/vite-ssr-i18n-basic → local checkout"
+
 .PHONY: clean
 clean: ## Remove node_modules, dist, .tmp, and the lockfile
 	rm -rf node_modules dist .tmp
