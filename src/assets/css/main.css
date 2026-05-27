@@ -135,9 +135,6 @@ main {
 @view-transition {
   navigation: auto;
 }
-.top {
-  view-transition-name: site-header;
-}
 @keyframes vt-fade-out {
   to {
     opacity: 0;
