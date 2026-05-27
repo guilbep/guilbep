@@ -13,7 +13,7 @@ DOCKER_CONFIG_PATH := $(shell pwd)
 
 # FILES can be overridden to target specific files (for git hooks / partial formats).
 FILES ?= .
-PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js %.njk,$(FILES))
+PRETTIER_FILES := $(filter %.css %.json %.md %.mjs %.js %.eta,$(FILES))
 
 # =============================================================================
 # Help
@@ -41,7 +41,7 @@ clean: ## Remove node_modules, dist, .tmp, and the lockfile
 # =============================================================================
 
 .PHONY: blog
-blog: ## Convert src/blog/*.md → src/pages/blog*.njk via marked
+blog: ## Convert src/blog/*.md → src/pages/blog*.eta via marked
 	node scripts/build-blog.mjs
 
 .PHONY: dev
