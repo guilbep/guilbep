@@ -61,6 +61,8 @@ build: blog ## Build the production site to dist/
 			echo "  ✓ dist/$$loc/blog.html → dist/$$loc/blog/index.html"; \
 		fi; \
 	done
+	@# Inject per-page CO2-per-visit footer based on gzipped size.
+	@node scripts/inject-co2.mjs
 
 .PHONY: preview
 preview: ## Serve the built dist/ on http://localhost:3001

@@ -162,6 +162,15 @@ img { max-width: 100%; height: auto; }
 }
 .cv-files a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
+.co2 {
+  max-width: var(--max);
+  margin: 2.5rem auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
 @media (max-width: 480px) {
   body { padding: 0.5rem 0.875rem 2rem; }
   .top { padding: 0.5rem 0 0.75rem; }
