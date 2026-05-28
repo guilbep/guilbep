@@ -1,6 +1,9 @@
 {
   "hostname": "https://pierreguilbert.com",
-  "locales": ["en", "fr"],
+  "locales": [
+    "en",
+    "fr"
+  ],
   "basePath": {
     "en": "/en",
     "fr": "/fr"
@@ -26,18 +29,408 @@
       "hidden": false
     },
     {
-      "key": "blog/why-12factor",
-      "path": "/blog/why-12factor",
-      "title": "Why 12factor is still the best thing around?",
-      "hidden": true
-    },
-    {
       "key": "404",
       "path": "/404",
       "title": {
         "en": "Not Found",
         "fr": "Page introuvable"
       },
+      "hidden": true
+    },
+    {
+      "key": "blog/a-personal-site-in-2-kb",
+      "path": "/blog/a-personal-site-in-2-kb",
+      "title": "A personal site in 2 KB",
+      "hidden": true
+    },
+    {
+      "key": "blog/a-small-example-of-dynamic-grid-layout-vs-flex-layout",
+      "path": "/blog/a-small-example-of-dynamic-grid-layout-vs-flex-layout",
+      "title": "A small example of dynamic grid-layout vs flex-layout",
+      "hidden": true
+    },
+    {
+      "key": "blog/accessibility-a11y-the-parts-that-actually-matter",
+      "path": "/blog/accessibility-a11y-the-parts-that-actually-matter",
+      "title": "Accessibility (a11y) — the parts that actually matter",
+      "hidden": true
+    },
+    {
+      "key": "blog/alpine-or-debian",
+      "path": "/blog/alpine-or-debian",
+      "title": "Alpine or Debian?",
+      "hidden": true
+    },
+    {
+      "key": "blog/automated-build-script-for-pierreguilbertcom",
+      "path": "/blog/automated-build-script-for-pierreguilbertcom",
+      "title": "Automated build script for pierreguilbert.com",
+      "hidden": true
+    },
+    {
+      "key": "blog/automatic-release-messages-based-on-standard-version-commitlint",
+      "path": "/blog/automatic-release-messages-based-on-standard-version-commitlint",
+      "title": "Automatic release messages from conventional commits",
+      "hidden": true
+    },
+    {
+      "key": "blog/database-modelling-and-mongodb",
+      "path": "/blog/database-modelling-and-mongodb",
+      "title": "Database modelling and MongoDB",
+      "hidden": true
+    },
+    {
+      "key": "blog/decision-making-zeromq-gitlab-w3c-rfc",
+      "path": "/blog/decision-making-zeromq-gitlab-w3c-rfc",
+      "title": "Decision-making: ZeroMQ, GitLab, W3C, RFC",
+      "hidden": true
+    },
+    {
+      "key": "blog/do-i-really-need-kubernetes-sometimes-you-need-bare-metal",
+      "path": "/blog/do-i-really-need-kubernetes-sometimes-you-need-bare-metal",
+      "title": "Do I really need Kubernetes? (sometimes you need bare metal)",
+      "hidden": true
+    },
+    {
+      "key": "blog/do-you-really-need-underscore-lodash",
+      "path": "/blog/do-you-really-need-underscore-lodash",
+      "title": "Do you really need underscore/lodash?",
+      "hidden": true
+    },
+    {
+      "key": "blog/emacs-vim-or-nano",
+      "path": "/blog/emacs-vim-or-nano",
+      "title": "Emacs, Vim, or Nano?",
+      "hidden": true
+    },
+    {
+      "key": "blog/from-full-time-on-site-to-full-time-remote",
+      "path": "/blog/from-full-time-on-site-to-full-time-remote",
+      "title": "From full-time on-site to full-time remote",
+      "hidden": true
+    },
+    {
+      "key": "blog/generating-code-that-generates-code-with-jinja2",
+      "path": "/blog/generating-code-that-generates-code-with-jinja2",
+      "title": "Generating code that generates code with Jinja2",
+      "hidden": true
+    },
+    {
+      "key": "blog/git-config-and-setup",
+      "path": "/blog/git-config-and-setup",
+      "title": "Git config and setup",
+      "hidden": true
+    },
+    {
+      "key": "blog/globbing-in-regex-inside-nginx-routes",
+      "path": "/blog/globbing-in-regex-inside-nginx-routes",
+      "title": "Globbing in regex inside nginx routes",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-kubernetes-really-works",
+      "path": "/blog/how-kubernetes-really-works",
+      "title": "How Kubernetes really works",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-mongodb-indexes-really-work",
+      "path": "/blog/how-mongodb-indexes-really-work",
+      "title": "How MongoDB indexes really work",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-avoid-your-logs-filling-all-the-space",
+      "path": "/blog/how-to-avoid-your-logs-filling-all-the-space",
+      "title": "How to avoid your logs filling all the space",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-do-an-interactive-rebase",
+      "path": "/blog/how-to-do-an-interactive-rebase",
+      "title": "How to do an interactive rebase",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-generate-your-vue-store-from-state-based-on-convention",
+      "path": "/blog/how-to-generate-your-vue-store-from-state-based-on-convention",
+      "title": "How to generate your Vue store from state based on convention",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-host-your-own-page-on-a-raspberry-pi",
+      "path": "/blog/how-to-host-your-own-page-on-a-raspberry-pi",
+      "title": "How to host your own page on a Raspberry Pi",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-improve-speed-dns-tls-handshake-geo-distribution-route",
+      "path": "/blog/how-to-improve-speed-dns-tls-handshake-geo-distribution-route",
+      "title": "How to improve speed (DNS, TLS handshake, geo-distribution, route)",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-improve-your-website-with-defer-preload-what-they-really-do",
+      "path": "/blog/how-to-improve-your-website-with-defer-preload-what-they-really-do",
+      "title": "How to improve your website with defer / preload — what they really do",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-improve-your-website-with-efficient-caching-http-headers",
+      "path": "/blog/how-to-improve-your-website-with-efficient-caching-http-headers",
+      "title": "How to improve your website with efficient caching (HTTP headers)",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-kill-a-process-properly",
+      "path": "/blog/how-to-kill-a-process-properly",
+      "title": "How to kill a process properly",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-really-test-for-performance-in-the-browser",
+      "path": "/blog/how-to-really-test-for-performance-in-the-browser",
+      "title": "How to really test for performance in the browser",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-set-up-a-smart-linter-strategy-with-vue-prettier-eslint",
+      "path": "/blog/how-to-set-up-a-smart-linter-strategy-with-vue-prettier-eslint",
+      "title": "How to set up a smart linter strategy with Vue (Prettier / ESLint)",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-use-cypress-image-diffing-locally-inside-docker-cross-os-issues",
+      "path": "/blog/how-to-use-cypress-image-diffing-locally-inside-docker-cross-os-issues",
+      "title": "How to use Cypress image diffing locally inside Docker (cross-OS issues)",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-use-several-git-users-github-and-gitlab",
+      "path": "/blog/how-to-use-several-git-users-github-and-gitlab",
+      "title": "How to use several git users (work/home GitHub & GitLab)",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-use-the-terminal-to-find-whats-taking-so-much-space",
+      "path": "/blog/how-to-use-the-terminal-to-find-whats-taking-so-much-space",
+      "title": "How to use the terminal to find what's taking so much space",
+      "hidden": true
+    },
+    {
+      "key": "blog/how-to-write-a-proper-commit-message-commitlint",
+      "path": "/blog/how-to-write-a-proper-commit-message-commitlint",
+      "title": "How to write a proper commit message (commitlint)",
+      "hidden": true
+    },
+    {
+      "key": "blog/i18n-naming-convention-and-why-you-should-set-it-up",
+      "path": "/blog/i18n-naming-convention-and-why-you-should-set-it-up",
+      "title": "i18n naming convention and why you should set it up",
+      "hidden": true
+    },
+    {
+      "key": "blog/iframe-post-publish-logic-to-set-scrollheight-properly",
+      "path": "/blog/iframe-post-publish-logic-to-set-scrollheight-properly",
+      "title": "iframe post/publish logic to set scrollHeight properly",
+      "hidden": true
+    },
+    {
+      "key": "blog/installing-debian-on-macos-yes-possible",
+      "path": "/blog/installing-debian-on-macos-yes-possible",
+      "title": "Installing Debian on macOS — yes, possible",
+      "hidden": true
+    },
+    {
+      "key": "blog/is-it-really-worth-it-to-secure-your-network-behind-a-vpn",
+      "path": "/blog/is-it-really-worth-it-to-secure-your-network-behind-a-vpn",
+      "title": "Is it really worth it to secure your network behind a VPN?",
+      "hidden": true
+    },
+    {
+      "key": "blog/is-neo4j-the-answer-lets-test-it",
+      "path": "/blog/is-neo4j-the-answer-lets-test-it",
+      "title": "Is Neo4j the answer? Let's test it",
+      "hidden": true
+    },
+    {
+      "key": "blog/running-a-simple-app-built-as-a-microservice-multiple-frontends-backends",
+      "path": "/blog/running-a-simple-app-built-as-a-microservice-multiple-frontends-backends",
+      "title": "Running a simple app built as a microservice (multiple frontends / backends)",
+      "hidden": true
+    },
+    {
+      "key": "blog/should-you-set-up-your-own-email-server",
+      "path": "/blog/should-you-set-up-your-own-email-server",
+      "title": "Should you set up your own email server?",
+      "hidden": true
+    },
+    {
+      "key": "blog/storing-a-graph-and-writing-queries-in-mongodb",
+      "path": "/blog/storing-a-graph-and-writing-queries-in-mongodb",
+      "title": "Storing a graph and writing queries in MongoDB",
+      "hidden": true
+    },
+    {
+      "key": "blog/terminal-speed-and-how-to-measure-it-why-it-matters",
+      "path": "/blog/terminal-speed-and-how-to-measure-it-why-it-matters",
+      "title": "Terminal speed and how to measure it — why it matters",
+      "hidden": true
+    },
+    {
+      "key": "blog/values-eg-gitlab-handbook",
+      "path": "/blog/values-eg-gitlab-handbook",
+      "title": "Values: e.g. GitLab handbook",
+      "hidden": true
+    },
+    {
+      "key": "blog/vite-ssr-i18n-basic-shipped",
+      "path": "/blog/vite-ssr-i18n-basic-shipped",
+      "title": "vite-ssr-i18n-basic, shipped",
+      "hidden": true
+    },
+    {
+      "key": "blog/what-to-test-and-what-not-to-test",
+      "path": "/blog/what-to-test-and-what-not-to-test",
+      "title": "What to test and what not to test",
+      "hidden": true
+    },
+    {
+      "key": "blog/whats-really-a-scaffolding-template-for-vue",
+      "path": "/blog/whats-really-a-scaffolding-template-for-vue",
+      "title": "What's really a scaffolding template for Vue?",
+      "hidden": true
+    },
+    {
+      "key": "blog/when-not-to-use-a-server-side-generated-website",
+      "path": "/blog/when-not-to-use-a-server-side-generated-website",
+      "title": "When (not) to use a server-side generated website",
+      "hidden": true
+    },
+    {
+      "key": "blog/when-you-should-not-use-analytics-on-your-blog-gtm-ga",
+      "path": "/blog/when-you-should-not-use-analytics-on-your-blog-gtm-ga",
+      "title": "When you should (not) use analytics on your blog (GTM/GA)",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-12factor",
+      "path": "/blog/why-12factor",
+      "title": "Why 12factor is still the best thing around?",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-and-how-to-create-complex-svgs-with-vue",
+      "path": "/blog/why-and-how-to-create-complex-svgs-with-vue",
+      "title": "Why and how to create complex SVGs with Vue",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-and-how-to-write-your-own-ci-cd-pipeline",
+      "path": "/blog/why-and-how-to-write-your-own-ci-cd-pipeline",
+      "title": "Why and how to write your own CI/CD pipeline",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-and-when-to-use-svg-vs-fonts",
+      "path": "/blog/why-and-when-to-use-svg-vs-fonts",
+      "title": "Why and when to use SVG vs fonts",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-css-variables-beat-scss-variables",
+      "path": "/blog/why-css-variables-beat-scss-variables",
+      "title": "Why CSS variables beat SCSS variables",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-mongoose-is-probably-not-helping-you",
+      "path": "/blog/why-mongoose-is-probably-not-helping-you",
+      "title": "Why Mongoose is probably not helping you",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-use-an-old-mac-mini-instead-of-a-raspberry-pi-2",
+      "path": "/blog/why-use-an-old-mac-mini-instead-of-a-raspberry-pi-2",
+      "title": "Why use an old Mac mini instead of a Raspberry Pi 2",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-at-least-try-dbml-and-entity-relationship-diagrams",
+      "path": "/blog/why-you-should-at-least-try-dbml-and-entity-relationship-diagrams",
+      "title": "Why you should at least try DBML and entity-relationship diagrams",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-generate-several-titles-for-your-blog-posts",
+      "path": "/blog/why-you-should-generate-several-titles-for-your-blog-posts",
+      "title": "Why you should generate several titles for your blog posts",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-multiplex-with-tmux",
+      "path": "/blog/why-you-should-multiplex-with-tmux",
+      "title": "Why you should multiplex with tmux",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-not-serve-static-files-with-python-or-express",
+      "path": "/blog/why-you-should-not-serve-static-files-with-python-or-express",
+      "title": "Why you should not serve static files with Python or Express",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-not-use-git-flow",
+      "path": "/blog/why-you-should-not-use-git-flow",
+      "title": "Why you should not use git-flow",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-probably-not-pass-functions-to-props",
+      "path": "/blog/why-you-should-probably-not-pass-functions-to-props",
+      "title": "Why you should probably not pass functions to props",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-secure-your-ssh-gate",
+      "path": "/blog/why-you-should-secure-your-ssh-gate",
+      "title": "Why you should secure your SSH gate",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-test-for-performance",
+      "path": "/blog/why-you-should-test-for-performance",
+      "title": "Why you should test for performance",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-use-cypress-image-diffing",
+      "path": "/blog/why-you-should-use-cypress-image-diffing",
+      "title": "Why you should use Cypress image diffing",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-use-git-fixup-git-commit-amend",
+      "path": "/blog/why-you-should-use-git-fixup-git-commit-amend",
+      "title": "Why you should use git --fixup / git commit --amend",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-use-vuepress-for-documentation",
+      "path": "/blog/why-you-should-use-vuepress-for-documentation",
+      "title": "Why you should use VitePress (not VuePress) for documentation",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-you-should-write-your-own-graph-library-in-javascript",
+      "path": "/blog/why-you-should-write-your-own-graph-library-in-javascript",
+      "title": "Why you should write your own graph library in JavaScript",
+      "hidden": true
+    },
+    {
+      "key": "blog/why-youre-not-using-v-model-properly-with-your-forms-localmodel-setter",
+      "path": "/blog/why-youre-not-using-v-model-properly-with-your-forms-localmodel-setter",
+      "title": "Why you're not using v-model properly with your forms (localModel setter)",
       "hidden": true
     }
   ]

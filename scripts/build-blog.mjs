@@ -36,6 +36,7 @@ import { marked } from "marked";
 const SRC_DIR = "src/blog";
 const OUT_INDEX = "src/pages/blog.eta";
 const OUT_POSTS_DIR = "src/pages/blog";
+const ROUTES_FILE = "routes.config.json";
 
 if (!existsSync(SRC_DIR)) {
   console.log(`build-blog: ${SRC_DIR}/ missing — nothing to do`);
@@ -106,6 +107,42 @@ if (indexEntry) {
 // Clean empty posts dir.
 if (existsSync(OUT_POSTS_DIR) && readdirSync(OUT_POSTS_DIR).length === 0) {
   rmSync(OUT_POSTS_DIR, { recursive: true, force: true });
+}
+
+// Sync routes.config.json — the plugin requires a route entry per page key,
+// so any blog post (drafts included, since they still render to HTML — only
+// hidden from the index list) needs `{ key: "blog/<slug>", path: "/blog/<slug>",
+// title, hidden: true }`. We rewrite the blog/* entries on every run; non-blog
+// routes (landing_page, blog index, 404) are preserved verbatim.
+if (existsSync(ROUTES_FILE)) {
+  const routes = JSON.parse(readFileSync(ROUTES_FILE, "utf8"));
+  const nonBlogPostRoutes = (routes.routes || []).filter(
+    (r) => !r.key.startsWith("blog/"),
+  );
+
+  // Build the desired blog/* set from disk — slugs come from .md filenames,
+  // titles from frontmatter (fallback to slug). Hidden so they don't pollute
+  // the global nav.
+  const blogPostRoutes = [];
+  for (const file of mdFiles) {
+    const slug = basename(file, ".md");
+    if (slug === "index") continue;
+    const raw = readFileSync(join(SRC_DIR, file), "utf8");
+    const { data: fm } = matter(raw);
+    blogPostRoutes.push({
+      key: `blog/${slug}`,
+      path: `/blog/${slug}`,
+      title: fm.title ?? slug,
+      hidden: true,
+    });
+  }
+  blogPostRoutes.sort((a, b) => a.key.localeCompare(b.key));
+
+  routes.routes = [...nonBlogPostRoutes, ...blogPostRoutes];
+  writeFileSync(ROUTES_FILE, JSON.stringify(routes, null, 2) + "\n");
+  console.log(
+    `  ✓ ${ROUTES_FILE} synced (${blogPostRoutes.length} blog post route${blogPostRoutes.length === 1 ? "" : "s"})`,
+  );
 }
 
 // ---------------------------------------------------------------------------
