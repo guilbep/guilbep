@@ -344,6 +344,12 @@
       "hidden": true
     },
     {
+      "key": "blog/why-inline-ternaries-dont-belong-in-vue-templates",
+      "path": "/blog/why-inline-ternaries-dont-belong-in-vue-templates",
+      "title": "Why inline ternaries don't belong in your Vue templates",
+      "hidden": true
+    },
+    {
       "key": "blog/why-mongoose-is-probably-not-helping-you",
       "path": "/blog/why-mongoose-is-probably-not-helping-you",
       "title": "Why Mongoose is probably not helping you",

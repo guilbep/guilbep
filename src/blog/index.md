@@ -53,6 +53,7 @@ A place to share knowledge, catalogue good ideas and practices, and surface thou
 
 ## Vue
 
+- Why inline ternaries don't belong in your Vue templates
 - Why you're not using `v-model` properly with your forms (`localModel` setter)
 - Why and how to create complex SVGs with Vue
 - What's really a scaffolding template for Vue?

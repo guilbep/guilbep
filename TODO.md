@@ -1,6 +1,0 @@
-- cleanup html
-- [ ] Reduce unused CSS Potential savings of 10 KiB
-- [ ] Properly size images Potential savings of 21 KiB: convert image to webp (img#avatar.2x)
-- [ ] Enable text compression with custom web server
-- [ ] Minify CSS : https://purifycss.online/
-- [ ] Minify html : https://kangax.github.io/html-minifier/
