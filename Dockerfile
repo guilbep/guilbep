@@ -3,7 +3,7 @@
 # `make docker-build && make docker-serve`) to serve `dist/` through nginx
 # with gzip + immutable cache headers on hashed assets. Mirrors what a real
 # production reverse proxy would do.
-FROM nginxinc/nginx-unprivileged:stable
+FROM nginx/nginx-unprivileged:stable
 
 # Replace stock config with ours.
 COPY nginx.conf /etc/nginx/nginx.conf
